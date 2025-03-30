@@ -13,6 +13,9 @@ app = Flask(__name__)  # name of current directory
 app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
 Bootstrap5(app)
 
+# web app
+# URL
+# https://prashannaraj.com.np/  # SSL Secure Sockets Layer
 
 @app.route('/', methods=['POST', 'GET'])
 def home():

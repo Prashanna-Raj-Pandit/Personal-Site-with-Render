@@ -150,3 +150,34 @@
         .nav-buttons a:hover {
             background-color: rgba(76, 93, 150, 0.6);
         }
+
+/* Add to landing.css */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.intro h1 {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Floating animation for shapes */
+.shape {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.shape:hover {
+  transform: scale(1.1) rotate(5deg);
+  opacity: 1;
+}
+
+.social-icons .icons li a {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-icons .icons li a:hover {
+  transform: translateY(-3px);
+  color: #4c5c96;
+}

@@ -1,84 +1,52 @@
+from flask import Flask, render_template, jsonify, abort
 import json
 
-from flask import Flask, render_template, send_from_directory, request, redirect, url_for, flash
-from form import MessageForm
-from flask_bootstrap import Bootstrap5
-import smtplib
-import os
+app = Flask(__name__)
 
-my_email = os.environ.get('EMAIL')
-password = os.environ.get('EMAIL_PASSCODE')
+def load_data():
+    """Load portfolio data from JSON file"""
+    with open('data.json', 'r') as f:
+        return json.load(f)
 
-app = Flask(__name__)  # name of current directory
-app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
-Bootstrap5(app)
+@app.route('/')
+def index():
+    """Main portfolio page"""
+    data = load_data()
+    return render_template('index.html', data=data)
 
-# web app
-# URL
-# https://prashannaraj.com.np/  # SSL Secure Sockets Layer
-
-@app.route('/', methods=['POST', 'GET'])
-def home():
-    return render_template("index.html")
-
-@app.route('/contact', methods=['POST', 'GET'])
-def contact():
-    message_form = MessageForm()
-    if message_form.validate_on_submit():
-        name = message_form.name.data
-        email = message_form.email.data
-        sub = message_form.subject.data
-        message = message_form.message.data
-        flash(message="Message Sent", category='success')
-        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
-            connection.starttls()
-            connection.login(user=my_email, password=password)
-            connection.sendmail(from_addr=my_email, to_addrs="erprp99@gmail.com",
-                                msg=f"Subject:{sub}\n\n{message}\n\nFrom:{name}\n{email}")
-            connection.sendmail(from_addr=my_email, to_addrs=email,
-                                msg=f"Subject:Message Received\n\n\nThanks for contacting me {name}. I'll reach out to you soon.\n\n\nSincerely,\n\nPrashanna Raj Pandit")
-        return redirect(url_for('home'))
-    return render_template("contact.html", form=message_form)
-
-def send_message(message_form):
-    name = message_form.name.data
-    email = message_form.email.data
-    sub = message_form.subject.data
-    message = message_form.message.data
-    # flash(message="Message Sent", category='success')
-    with smtplib.SMTP("smtp.gmail.com", 587) as connection:
-        connection.starttls()
-        connection.login(user=my_email, password=password)
-        connection.sendmail(from_addr=my_email, to_addrs="erprp99@gmail.com",
-                            msg=f"Subject:{sub}\n\n{message}\n\nFrom:{name}\n{email}")
-        connection.sendmail(from_addr=my_email, to_addrs=email,
-                            msg=f"Subject:Message Received\n\n\nThanks for contacting me {name}. I'll reach out to you soon.\n\n\nSincerly,\n\nPrashanna Raj Pandit")
-    return redirect(url_for('home'))
-
-
-@app.route('/skills',methods=['POST','GET'])
+@app.route('/skills')
 def skills():
-    message_form = MessageForm()
-    if message_form.validate_on_submit():
-        send_message(message_form)
-    return render_template("skills.html", form=message_form)
+    """Skills page"""
+    data = load_data()
+    return render_template('skills.html', data=data)
 
+@app.route('/project/<project_id>')
+def project_detail(project_id):
+    """Individual project detail page"""
+    data = load_data()
+    project = next((p for p in data['projects'] if p['id'] == project_id), None)
+    if not project:
+        abort(404)
+    return render_template('project_detail.html', project=project, data=data)
 
-@app.route('/download')
-def download():
-    return send_from_directory('static', path='files/Resume.pdf')
+@app.route('/achievement/<achievement_id>')
+def achievement_detail(achievement_id):
+    """Individual achievement detail page"""
+    data = load_data()
+    achievement = next((a for a in data['achievements'] if a['id'] == achievement_id), None)
+    if not achievement:
+        abort(404)
+    return render_template('achievement_detail.html', achievement=achievement, data=data)
 
+@app.route('/api/data')
+def get_data():
+    """API endpoint to get portfolio data"""
+    data = load_data()
+    return jsonify(data)
 
-@app.route('/recent_works',methods=['POST','GET'])
-def all_recent_work():
-    # with open('static/data/projects.json', 'r') as f:
-    #     data = json.load(f)
-    message_form = MessageForm()
-    if message_form.validate_on_submit():
-        send_message(message_form)
-    # print(data)
-    return render_template("recent_work.html", form=message_form)
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html'), 404
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)

@@ -3,203 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills - Prashanna Raj Pandit</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/skills.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Skills - {{ data.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <section class="skills-section">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <h1 class="section-title fade-in">Skill & Knowledge Areas</h1>
-            <div class="skills-flow">
-<!--                advanced cs areas-->
-                <div class="skill-item animate-flow">
-                    <div class="skill-header">
-                        <i class="fas fa-brain"></i>
-                        <h2>General CS Areas</h2>
-                    </div>
-                    <div class="skill-content">
-<!--                        <p></p>-->
-                        <ul>
-                            <li>Data Structure and Algorithm, Operating System ( Linux and Shell Commands )</li>
-                            <li>Engineering Mathematics, Calculus, Linear Algebra, Probability and Statics, Data Mining</li>
-                            <li>Computer Architecture, Microprocessor, Microcontroller, Computer Network</li>
-                        </ul>
-                    </div>
+            <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#experience">Experience</a></li>
+                <li><a href="/skills" class="active">Skills</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#publications">Publications</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Skills Hero -->
+    <section class="skills-hero">
+        <div class="container">
+            <h1 class="page-title">Technical Skills & Expertise</h1>
+            <p class="page-subtitle">A comprehensive overview of my technical competencies and knowledge areas</p>
+        </div>
+    </section>
+
+    <!-- General CS Areas -->
+    <section class="section">
+        <div class="container">
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>General Computer Science Areas</h2>
                 </div>
-
-                <div class="skill-item animate-flow">
-    <div class="skill-header">
-        <i class="fas fa-brain"></i>
-        <h2>Advanced CS Areas</h2>
-    </div>
-    <div class="skill-content">
-        <p>Expertise in cutting-edge domains of computer science, automation, analysis, and intelligent systems.</p>
-        <ul>
-            <li><strong>Computer Vision</strong>: Image Processing, Object Detection (YOLO), Pose Estimation (OpenPose & Mediapipe), Real-Time Video Analysis</li>
-            <li><strong>Artificial Intelligence</strong>: Machine Learning, Feature Engineering, Predictive Modeling, AI-Driven Automation</li>
-            <li><strong>Data Science</strong>: Data Cleaning, Data Visualization, Statistical Analysis, Time-Series Analysis</li>
-            <li><strong>Deep Learning</strong>: Neural Networks, Convolutional Neural Networks (CNNs), Model Training, Real-Time Inference</li>
-        </ul>
-    </div>
-</div>
-                <!-- Programming Languages -->
-                <div class="skill-item animate-flow">
-                    <div class="skill-header">
-                        <i class="fas fa-code"></i>
-                        <h2>Programming Languages</h2>
+                <div class="skill-items-grid">
+                    {% for skill in data.skills.general_cs %}
+                    <div class="skill-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>{{ skill }}</span>
                     </div>
-                    <div class="skill-content">
-                        <p>Proficient in versatile languages for software development, data analysis, and system programming.</p>
-                        <div class="programming-flow">
-                            <span class="icon" data-tooltip="Python">
-                                <img src="{{ url_for('static', filename='images/python1.webp') }}" alt="Python">
-                            </span>
-                            <span class="icon" data-tooltip="C">
-                                <img src="{{ url_for('static', filename='images/c1.webp') }}" alt="C">
-                            </span>
-                            <span class="icon" data-tooltip="C++">
-                                <img src="{{ url_for('static', filename='images/cplus.webp') }}" alt="C++">
-                            </span>
-                            <span class="icon" data-tooltip="R">
-                                <img src="{{ url_for('static', filename='images/R.png') }}" alt="R">
-                            </span>
-                            <span class="icon" data-tooltip="Flutter">
-                                <img src="{{ url_for('static', filename='images/flutter.webp') }}" alt="Flutter">
-                            </span>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-
-                <!-- Libraries & Frameworks -->
-                <div class="skill-item animate-flow">
-                    <div class="skill-header">
-                        <i class="fas fa-layer-group"></i>
-                        <h2>Libraries & Frameworks</h2>
-                    </div>
-                    <div class="skill-content">
-                        <p>Skilled in leveraging powerful tools for machine learning, web development, and data visualization.</p>
-                        <div class="programming-flow">
-                            <span class="icon" data-tooltip="TensorFlow">
-                                <img src="{{ url_for('static', filename='images/tf.png') }}" alt="TensorFlow">
-                            </span>
-                            <span class="icon" data-tooltip="Scikit-Learn">
-                                <img src="{{ url_for('static', filename='images/scikit-learn-logo.png') }}" alt="Scikit-Learn">
-                            </span>
-                            <span class="icon" data-tooltip="Keras">
-                                <img src="{{ url_for('static', filename='images/keras.png') }}" alt="Keras">
-                            </span>
-                            <span class="icon" data-tooltip="Flask">
-                                <img src="{{ url_for('static', filename='images/recent_work/flask.webp') }}" alt="Flask">
-                            </span>
-                            <span class="icon" data-tooltip="Matplotlib">
-                                <img src="{{ url_for('static', filename='images/mat.png') }}" alt="Matplotlib">
-                            </span>
-                            <span class="icon" data-tooltip="NumPy">
-                                <img src="{{ url_for('static', filename='images/numpy.png') }}" alt="NumPy">
-                            </span>
-                            <span class="icon" data-tooltip="Pandas">
-                                <img src="{{ url_for('static', filename='images/pandas.png') }}" alt="Pandas">
-                            </span>
-                            <span class="icon" data-tooltip="OpenCV">
-                                <img src="{{ url_for('static', filename='images/opencv.png') }}" alt="OpenCV">
-                            </span>
-                            <span class="icon" data-tooltip="YOLO">
-                                <img src="{{ url_for('static', filename='images/yolo.png') }}" alt="YOLO">
-                            </span>
-                            <span class="icon" data-tooltip="Selenium">
-                                <img src="{{ url_for('static', filename='images/selinium.png') }}" alt="Selenium">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Software & Tools -->
-                <div class="skill-item animate-flow">
-                    <div class="skill-header">
-                        <i class="fas fa-tools"></i>
-                        <h2>Software & Tools</h2>
-                    </div>
-                    <div class="skill-content">
-                        <p>Experienced with development environments, version control, and productivity software for efficient workflows.</p>
-                        <div class="programming-flow">
-                            <span class="icon" data-tooltip="Git">
-                                <img src="{{ url_for('static', filename='images/Git.webp') }}" alt="Git">
-                            </span>
-                            <span class="icon" data-tooltip="PyCharm">
-                                <img src="{{ url_for('static', filename='images/PyCharm_Icon.png')}}" alt="PyCharm">
-                            </span>
-                            <span class="icon" data-tooltip="PostgreSQL">
-                                <img src="{{ url_for('static', filename='images/recent_work/postgres.webp') }}" alt="PostgreSQL">
-                            </span>
-                            <span class="icon" data-tooltip="Visual Studio">
-                                <img src="{{ url_for('static', filename='images/vs.png') }}" alt="Visual Studio">
-                            </span>
-                            <span class="icon" data-tooltip="Android Studio">
-                                <img src="{{ url_for('static', filename='images/android_studio.png') }}" alt="Android Studio">
-                            </span>
-                            <span class="icon" data-tooltip="Colab">
-                                <img src="{{ url_for('static', filename='images/colab.png') }}" alt="Colab">
-                            </span>
-                            <span class="icon" data-tooltip="Linux">
-                                <img src="{{ url_for('static', filename='images/linux.png') }}" alt="Linux">
-                            </span>
-                            <span class="icon" data-tooltip="Postman">
-                                <img src="{{ url_for('static', filename='images/postman.png') }}" alt="Postman">
-                            </span>
-                            <span class="icon" data-tooltip="MATLAB">
-                                <img src="{{ url_for('static', filename='images/Matlab_Logo.png') }}" alt="MATLAB">
-                            </span>
-                            <span class="icon" data-tooltip="MS Office">
-                                <img src="{{ url_for('static', filename='images/office.jpeg') }}" alt="MS Office">
-                            </span>
-
-                            <span class="icon" data-tooltip="Adobe XD">
-                                <img src="{{ url_for('static', filename='images/adobe_xd.png') }}" alt="Adobe XD">
-                            </span>
-                            <span class="icon" data-tooltip="Canva">
-                                <img src="{{ url_for('static', filename='images/canva.jpeg') }}" alt="Canva">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hardware -->
-                <div class="skill-item animate-flow">
-                    <div class="skill-header">
-                        <i class="fas fa-microchip"></i>
-                        <h2>Hardware</h2>
-                    </div>
-                    <div class="skill-content">
-                        <p>Hands-on expertise in microcontroller programming and embedded systems design.</p>
-                        <div class="programming-flow">
-                            <span class="icon" data-tooltip="Arduino">
-                                <img src="{{ url_for('static', filename='images/arduino.webp') }}" alt="Arduino">
-                            </span>
-                            <span class="icon" data-tooltip="Raspberry Pi">
-                                <img src="{{ url_for('static', filename='images/respberrypi.png') }}" alt="Raspberry Pi">
-                            </span>
-                            <span class="icon" data-tooltip="ESP8266">
-                                <img src="{{ url_for('static', filename='images/esp.jpg') }}" alt="ESP8266">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Advanced CS Areas -->
-
             </div>
         </div>
     </section>
 
+    <!-- Advanced CS Areas -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-brain"></i>
+                    <h2>Advanced Computer Science Areas</h2>
+                </div>
+                {% for area, skills in data.skills.advanced_areas.items() %}
+                <div class="advanced-skill-section">
+                    <h3 class="area-title">{{ area }}</h3>
+                    <div class="skill-tags">
+                        {% for skill in skills %}
+                        <span class="skill-tag">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
-    <script src="{{ url_for('static', filename='js/skills.js') }}"></script>
+    <!-- Programming Languages -->
+    <section class="section">
+        <div class="container">
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-code"></i>
+                    <h2>Programming Languages</h2>
+                </div>
+                <div class="tech-icons-grid">
+                    {% for lang in data.skills.programming_languages %}
+                    <div class="tech-icon-card">
+                        <img src="{{ url_for('static', filename=lang.icon) }}" alt="{{ lang.name }}">
+                        <p>{{ lang.name }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frameworks & Libraries -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-layer-group"></i>
+                    <h2>Frameworks & Libraries</h2>
+                </div>
+                <div class="tech-icons-grid">
+                    {% for framework in data.skills.frameworks %}
+                    <div class="tech-icon-card">
+                        <img src="{{ url_for('static', filename=framework.icon) }}" alt="{{ framework.name }}">
+                        <p>{{ framework.name }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Software -->
+    <section class="section">
+        <div class="container">
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-tools"></i>
+                    <h2>Software & Tools</h2>
+                </div>
+                <div class="tech-icons-grid">
+                    {% for tool in data.skills.tools %}
+                    <div class="tech-icon-card">
+                        <img src="{{ url_for('static', filename=tool.icon) }}" alt="{{ tool.name }}">
+                        <p>{{ tool.name }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hardware -->
+    <section class="section dark-section">
+        <div class="container">
+            <div class="skill-category">
+                <div class="category-header">
+                    <i class="fas fa-microchip"></i>
+                    <h2>Hardware & Embedded Systems</h2>
+                </div>
+                <div class="tech-icons-grid">
+                    {% for hardware in data.skills.hardware %}
+                    <div class="tech-icon-card">
+                        <img src="{{ url_for('static', filename=hardware.icon) }}" alt="{{ hardware.name }}">
+                        <p>{{ hardware.name }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 {{ data.name }}. Designed & Built with <i class="fas fa-heart"></i></p>
+            <p class="footer-tag">&lt;/coder&gt;</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
-
-
-

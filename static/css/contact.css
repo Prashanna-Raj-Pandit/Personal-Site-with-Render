@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #2e3141;
+    color: #ecf0f1;
+    overflow-x: hidden;
+}
+
+.contact-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Animation */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.node {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    border-radius: 50%;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.node1 { top: 20%; left: 10%; animation-delay: 0s; }
+.node2 { top: 60%; left: 30%; animation-delay: 0.5s; }
+.node3 { top: 40%; left: 70%; animation-delay: 1s; }
+.node4 { top: 80%; left: 90%; animation-delay: 1.5s; }
+
+.line {
+    position: absolute;
+    background: rgba(52, 152, 219, 0.3);
+    height: 2px;
+    transform-origin: left;
+    animation: connect 3s infinite ease-in-out;
+}
+
+.line1 { top: 20%; left: 10%; width: 20%; transform: rotate(45deg); animation-delay: 0s; }
+.line2 { top: 60%; left: 30%; width: 25%; transform: rotate(-30deg); animation-delay: 0.5s; }
+.line3 { top: 40%; left: 70%; width: 15%; transform: rotate(60deg); animation-delay: 1s; }
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #bdc3c7;
+    margin-bottom: 40px;
+}
+
+/* Flash Messages */
+.flash {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.flash.success {
+    background: #27ae60;
+    color: #ecf0f1;
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #ecf0f1;
+    margin-bottom: 8px;
+}
+
+.form-group label i {
+    margin-right: 10px;
+    color: #3498db;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    color: #ecf0f1;
+    font-size: 1rem;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: #3498db;
+    color: #ecf0f1;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-btn i {
+    margin-right: 10px;
+}
+
+.submit-btn:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.3); opacity: 1; }
+}
+
+@keyframes connect {
+    0%, 100% { width: 0; opacity: 0.3; }
+    50% { width: 100%; opacity: 0.8; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title { font-size: 2rem; }
+    .subtitle { font-size: 1rem; }
+    .contact-form { padding: 20px; }
+    .form-group input, .form-group textarea { font-size: 0.9rem; }
+    .submit-btn { font-size: 1rem; }
+}

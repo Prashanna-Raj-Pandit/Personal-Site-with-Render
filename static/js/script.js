@@ -124,3 +124,39 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log('%c👋 Hey there, developer!', 'font-size: 20px; color: #9DB2BF; font-weight: bold; font-family: "Fira Code", monospace;');
 console.log('%cLike what you see? Let\'s connect!', 'font-size: 14px; color: #526D82; font-family: "Fira Code", monospace;');
 console.log('%cGitHub: https://github.com/Prashanna-Raj-Pandit', 'font-size: 12px; color: #DDE6ED; font-family: "Fira Code", monospace;');
+
+// Lightbox Functions for Tableau Dashboards
+function openLightbox(dashboardId) {
+    const lightbox = document.getElementById('lightbox-' + dashboardId);
+    if (lightbox) {
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+}
+
+function closeLightbox(dashboardId) {
+    const lightbox = document.getElementById('lightbox-' + dashboardId);
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    }
+}
+
+// Close lightbox when clicking outside the image
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('lightbox-modal')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const activeLightbox = document.querySelector('.lightbox-modal.active');
+        if (activeLightbox) {
+            activeLightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    }
+});

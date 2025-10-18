@@ -129,7 +129,7 @@
       "Operating System (Linux and Shell Commands)",
       "Engineering Mathematics, Calculus, Linear Algebra",
       "Probability and Statistics",
-      "Data Mining",
+      "Machine Learning",
       "Computer Architecture",
       "Microprocessor and Microcontroller",
       "Computer Network"
@@ -164,8 +164,7 @@
       {"name": "Python", "icon": "images/python1.webp"},
       {"name": "C", "icon": "images/c1.webp"},
       {"name": "C++", "icon": "images/cplus.webp"},
-      {"name": "R", "icon": "images/R.png"},
-      {"name": "Flutter/Dart", "icon": "images/flutter.webp"}
+      {"name": "R", "icon": "images/R.png"}
     ],
     "frameworks": [
       {"name": "TensorFlow", "icon": "images/tf.png"},
@@ -177,25 +176,29 @@
       {"name": "Pandas", "icon": "images/pandas.png"},
       {"name": "NumPy", "icon": "images/numpy.png"},
       {"name": "Matplotlib", "icon": "images/mat.png"},
-      {"name": "Selenium", "icon": "images/selinium.png"}
+      {"name": "Selenium", "icon": "images/selinium.png"},
+      {"name": "SciPy", "icon": "images/selinium.png"}
     ],
     "tools": [
-      {"name": "Git", "icon": "images/Git.webp"},
-      {"name": "PyCharm", "icon": "images/PyCharm_Icon.png"},
-      {"name": "Visual Studio", "icon": "images/vs.png"},
-      {"name": "PostgreSQL", "icon": "images/recent_work/postgres.webp"},
-      {"name": "Linux", "icon": "images/linux.png"},
-      {"name": "Postman", "icon": "images/postman.png"},
-      {"name": "Google Colab", "icon": "images/colab.png"},
-      {"name": "Android Studio", "icon": "images/android_studio.png"},
-      {"name": "MATLAB", "icon": "images/Matlab_Logo.png"},
-      {"name": "Adobe XD", "icon": "images/adobe_xd.png"},
-      {"name": "Canva", "icon": "images/canva.jpeg"}
+      {"name": "Git", "icon": ""},
+      {"name": "GitHub", "icon": ""},
+      {"name": "Docker", "icon": ""},
+      {"name": "Tableau", "icon": ""},
+      {"name": "PostgreSQL", "icon": ""},
+      {"name": "Linux", "icon": ""},
+      {"name": "MLflow", "icon": ""},
+      {"name": "Jupyter Notebook", "icon": ""},
+      {"name": "Cursor", "icon": ""}
     ],
     "hardware": [
-      {"name": "Arduino", "icon": "images/arduino.webp"},
-      {"name": "Raspberry Pi", "icon": "images/respberrypi.png"},
-      {"name": "ESP8266", "icon": "images/esp.jpg"}
+      {"name": "Machine Learning", "icon": ""},
+      {"name": "Statistical Modeling", "icon": ""},
+      {"name": "Data Preprocessing", "icon": ""},
+      {"name": "Neural Networks", "icon": ""},
+      {"name": "Time Series Analysis", "icon": ""},
+      {"name": "ML Pipeline", "icon": ""},
+      {"name": "Model Deployment", "icon": ""},
+      {"name": "Cloud Services", "icon": ""}
     ]
   },
 
@@ -492,12 +495,28 @@
 
 
   ],
+  "tableau_dashboards": [
+  {
+    "id": "dashboard-1",
+    "title": "Customer Churn Analysis",
+    "description": "Modeling Frequency of network use and customer complains for an Iranian Telecom Company.",
+    "image": "images/dashboards/Tableau_visualization_1.png",
+    "download_url": "files/dTableau_visualization_1.twbx"
+  },
+  {
+    "id": "dashboard-2",
+    "title": "Call and Tariff performance",
+    "description": "Modeling call failures and evaluating tariff plan preference for an Iranian Telecom Company.",
+    "image": "images/dashboards/Tableau_visualization_3.png",
+    "download_url": "files/Tableau_visualization_3.twbx"
+  }
+],
 
   "certifications": [
   {
     "id": "100-days-of-python",
     "title": "100 Days of Python Bootcamp",
-    "issuer": "Self-paced / Bootcamp",
+    "issuer": "Udemy / Dr.Angelia",
     "date": "2024",
     "credential_url": "",
     "image": "images/certifications/100days-python.jpg",
@@ -508,10 +527,10 @@
   {
     "id": "tensorflow-bootcamp",
     "title": "TensorFlow Bootcamp",
-    "issuer": "TensorFlow / Online Bootcamp",
+    "issuer": "Udemy / Mr.Daniel",
     "date": "2024",
     "credential_url": "",
-    "image": "images/certifications/irb.png",
+    "image": "images/tf.png",
     "icon": "fa-brain",
     "description": "Completed hands-on deep learning bootcamp focused on building, training, and deploying neural networks using TensorFlow and Keras.",
     "tags": ["TensorFlow", "Deep Learning", "Neural Networks"]
@@ -530,10 +549,10 @@
   {
     "id": "model-deployment-bootcamp",
     "title": "Model Deployment Bootcamp",
-    "issuer": "Online Bootcamp / MLOps Provider",
+    "issuer": "Udemy",
     "date": "2024",
     "credential_url": "",
-    "image": "images/certifications/irb.png",
+    "image": "images/bg.jpg",
     "icon": "fa-cloud-upload-alt",
     "description": "Learned how to deploy ML models using Flask, Docker, and CI/CD pipelines, covering best practices in production-ready MLOps.",
     "tags": ["MLOps", "Deployment", "Docker"]
@@ -541,10 +560,10 @@
   {
     "id": "agentic-ai-bootcamp",
     "title": "Agentic AI Bootcamp",
-    "issuer": "Agentic AI Bootcamp",
+    "issuer": "Udemy",
     "date": "2025",
     "credential_url": "",
-    "image": "images/certifications/irb.png",
+    "image": "images/bg.jpg",
     "icon": "fa-robot",
     "description": "Explored building agentic AI systems including planning agents, tool use, and autonomous workflows using modern LLM frameworks.",
     "tags": ["AI Agents", "Autonomy", "LLM"]

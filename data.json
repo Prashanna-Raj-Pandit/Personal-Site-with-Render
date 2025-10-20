@@ -296,7 +296,7 @@
     {
     "id": "food-vision",
     "title": "Food Vision Project",
-    "category": "Computer Vision / Transfer Learning",
+    "category": "Computer Vision",
     "short_description": "Food classification model using transfer learning on the Food101 dataset.",
     "description": "Trained transfer learning models (EfficientNetV2B0) with TensorFlow on Food101 dataset subsets. Compared feature extraction vs fine-tuning with and without data augmentation. Implemented checkpointing for best model saving and achieved robust food image classification.",
     "image": "images/food-vision.png",
@@ -332,7 +332,7 @@
 {
     "id": "traffic-sign-classification",
     "title": "Traffic Sign Classification with Fine-Tuned VGG-16",
-    "category": "Computer Vision / Deep Learning",
+    "category": "Computer Vision",
     "short_description": "Traffic sign classification using fine-tuned VGG-16 with TensorFlow.",
     "description": "Fine-tuned a pre-trained VGG-16 model to classify 43 traffic sign classes from the GTSRB dataset. Implemented dataset preprocessing, model training, evaluation, and visualization pipeline. Demonstrated transfer learning performance on limited data.",
     "image": "images/trafic-sign.png",

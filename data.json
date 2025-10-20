@@ -51,9 +51,9 @@
     ]
   },
   {
-    "position": "Software Engineer Intern",
+    "position": "Software Engineer",
     "organization": "Vrit Technologies",
-    "duration": "Jan 2023 – Jul 2023",
+    "duration": "Jan 2023 – Jul 2024",
     "location": "Kathmandu, Nepal",
     "description": "Full-stack web development and backend optimization for scalable AI-ready systems.",
     "responsibilities": [
@@ -531,7 +531,7 @@
     "date": "2024",
     "credential_url": "",
     "image": "images/tf.png",
-    "icon": "fa-brain",
+    "icon": "fa-python",
     "description": "Completed hands-on deep learning bootcamp focused on building, training, and deploying neural networks using TensorFlow and Keras.",
     "tags": ["TensorFlow", "Deep Learning", "Neural Networks"]
   },

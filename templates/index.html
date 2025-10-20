@@ -20,7 +20,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#tableau-dashboards">Dashboards</a></li>
                 <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#certifications">Certifications</a></li>
+<!--                <li><a href="#certifications">Certifications</a></li>-->
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -274,34 +274,34 @@
         </div>
     </section>
 
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-columns">
-                {% for cert in data.certifications %}
-                <div class="certification-card-column">
-                    <div class="cert-image-wrapper">
-                        <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">
-                    </div>
-                    <div class="cert-icon-column">
-                        <i class="fab {{ cert.icon }}"></i>
-                    </div>
-                    <div class="cert-content-column">
-                        <h3>{{ cert.title }}</h3>
-                        <p class="cert-issuer-column">{{ cert.issuer }}</p>
-                        <p class="cert-description">{{ cert.description }}</p>
-                        <span class="cert-date-column"><i class="fas fa-calendar"></i> {{ cert.date }}</span>
-                    </div>
-                    {% if cert.url %}
-                    <a href="{{ cert.url }}" target="_blank" class="cert-view-btn">
-                        <i class="fas fa-external-link-alt"></i> View Certificate
-                    </a>
-                    {% endif %}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+<!--    <section id="certifications" class="section">-->
+<!--        <div class="container">-->
+<!--            <h2 class="section-title">Certifications</h2>-->
+<!--            <div class="certifications-columns">-->
+<!--                {% for cert in data.certifications %}-->
+<!--                <div class="certification-card-column">-->
+<!--                    <div class="cert-image-wrapper">-->
+<!--                        <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">-->
+<!--                    </div>-->
+<!--                    <div class="cert-icon-column">-->
+<!--                        <i class="fab {{ cert.icon }}"></i>-->
+<!--                    </div>-->
+<!--                    <div class="cert-content-column">-->
+<!--                        <h3>{{ cert.title }}</h3>-->
+<!--                        <p class="cert-issuer-column">{{ cert.issuer }}</p>-->
+<!--                        <p class="cert-description">{{ cert.description }}</p>-->
+<!--                        <span class="cert-date-column"><i class="fas fa-calendar"></i> {{ cert.date }}</span>-->
+<!--                    </div>-->
+<!--                    {% if cert.url %}-->
+<!--                    <a href="{{ cert.url }}" target="_blank" class="cert-view-btn">-->
+<!--                        <i class="fas fa-external-link-alt"></i> View Certificate-->
+<!--                    </a>-->
+<!--                    {% endif %}-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
     <section id="contact" class="section section-dark">
         <div class="container">

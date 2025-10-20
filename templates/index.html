@@ -1,268 +1,351 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link
-            rel="shortcut icon"
-            type="x-icon"
-            href="static/images/mylogo.png"
-    />
-    <title>Prashanna</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="static/assets/css/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }} - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="is-preload">
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+<!--                <li><a href="{{ url_for('skills') }}">Skills</a></li>-->
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tableau-dashboards">Dashboards</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+<!--                <li><a href="#certifications">Certifications</a></li>-->
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-<!-- Page Wrapper -->
-<div id="page-wrapper">
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-image">
+                    <div class="profile-wrapper">
+                        <img src="{{ url_for('static', filename=data.profile_image) }}" alt="{{ data.name }}" class="profile-img">
+                        <div class="profile-border"></div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <span class="greeting">&lt;hello_world/&gt;</span>
+                    <h1 class="hero-title">{{ data.name }}</h1>
+                    <h2 class="hero-subtitle">{{ data.title }}</h2>
+                    <p class="hero-tagline">{{ data.subtitle }}</p>
+                    <p class="hero-bio">{{ data.bio }}</p>
 
-    <!-- Header -->
-    <header id="header" class="alt">
-        <h1><a href="index.html">Prashanna Raj Pandit</a></h1>
-
-    </header>
-
-    <!-- Menu -->
-
-    <!-- Banner -->
-    {% include "banner.html"%}
-
-    <!-- Wrapper -->
-    <section id="wrapper">
-
-        <!-- One -->
-        <section id="one" class="wrapper spotlight style1">
-            <div class="inner">
-                <a class="image"><img src="static/images/pic.png"  alt="research"/></a>
-                <div class="content">
-                    <h2>Experience</h2>
-                    <p>Research Assistant at Southern Illinois University Edwardsville</p>
-                    <p>Role: Feature extraction using video processing and the development of prediction models </p>
-                    <h2 class="major">Research Interest</h2>
-
-                    <ul>
-                        Artificial Intelligence, Computer Vision, and its implementation in automation, pattern
-                        recognition,
-                        Intrusion detection, and computational biology.
-
-                    </ul>
-                    <div>
-                        <h3>Publication</h3>
-                        <h5>Automation of Driving License Test using Computer Vision and Image Processing</h5>
-                        <p>Conference: International Conference on Technologies for Computer, Electrical, Electronics &
-                            Communication (ICT-CEEL 2023)</p>
-                        <ul><a href="https://ictceel.khwopaconference.com/uploads/conferencepaper/fullpaper/1037.pdf" target="_blank"
-                               class="button">View paper</a></ul>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-code"></i> View Projects
+                        </a>
+                        <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank" class="btn btn-secondary">
+                            <i class="fas fa-file-pdf"></i> Download Resume
+                        </a>
                     </div>
 
+                    <div class="social-links">
+                        {% for social in data.social %}
+                        <a href="{{ social.url }}" target="_blank" class="social-icon">
+                            <i class="fab {{ social.icon }}"></i>
+                        </a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Two -->
-
-
-        <section id="two" class="wrapper alt spotlight style2">
-    <div class="inner">
-        <a href="{{url_for('skills')}}" class="image">
-            <img src="static/images/skils.webp" loading="lazy" alt="skills" />
-        </a>
-        <div class="content">
-<!--            <h2 class="major">Skill and Interest Areas</h2>-->
-
-            <!-- Programming Languages -->
-            <div class="skills-section">
-                <h3>Programming Languages</h3>
-                <div class="skills-container">
-                    <span class="skill-item">
-                        <img src="static/images/python1.webp" loading="lazy" height="40px" width="40px" alt="Python" />
-                        <span class="skill-label">Python</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/c1.webp" loading="lazy" height="45px" width="45px" alt="C" />
-                        <span class="skill-label">C</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/cplus.webp" loading="lazy" height="40px" width="40px" alt="C++" />
-                        <span class="skill-label">C++</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/R.png" loading="lazy" height="40px" width="40px" alt="R" />
-                        <span class="skill-label">R</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Frameworks -->
-            <div class="skills-section">
-                <h3>Libraries & Frameworks</h3>
-                <div class="skills-container">
-                    <span class="skill-item">
-                        <img src="static/images/tf.png" loading="lazy" height="40px" width="40px" alt="TensorFlow" />
-                        <span class="skill-label">TensorFlow</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/scikit-learn-logo.png" loading="lazy" height="40px" width="40px" alt="Scikit-Learn" />
-                        <span class="skill-label">Scikit-Learn</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/keras.png" loading="lazy" height="40px" width="40px" alt="Scikit-Learn" />
-                        <span class="skill-label">Keras</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/recent_work/flask.webp" loading="lazy" height="40px" width="40px" alt="Flask" />
-                        <span class="skill-label">Flask</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/mat.png" loading="lazy" height="40px" width="40px" alt="Matplotlib" />
-                        <span class="skill-label">Matplotlib</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/numpy.png" loading="lazy" height="40px" width="40px" alt="Numpy" />
-                        <span class="skill-label">Numpy</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/pandas.png" loading="lazy" height="40px" width="40px" alt="Pandas" />
-                        <span class="skill-label">Pandas</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/opencv.png" loading="lazy" height="40px" width="40px" alt="Open cv" />
-                        <span class="skill-label">Open CV</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/yolo.png" loading="lazy" height="40px" width="40px" alt="YOLO" />
-                        <span class="skill-label">YOLO</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/selinium.png" loading="lazy" height="40px" width="40px" alt="Selenium" />
-                        <span class="skill-label">Selenium</span>
-                    </span>
-                </div>
-            </div>
-
-            <!-- Software -->
-            <div class="skills-section">
-                <h3>Software/Tools</h3>
-                <div class="skills-container">
-                    <span class="skill-item">
-                        <img src="static/images/Pycharm_Icon.png" loading="lazy" height="40px" width="40px" alt="Pycharm" />
-                        <span class="skill-label">Pycharm</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/recent_work/postgres.webp" loading="lazy" height="40px" width="40px" alt="PostgreSQL" />
-                        <span class="skill-label">PostgreSQL</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/Git.webp" loading="lazy" height="40px" width="40px" alt="Git" />
-                        <span class="skill-label">Git</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/colab.png" loading="lazy" height="40px" width="40px" alt="Colab" />
-                        <span class="skill-label">Colab</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/linux.png" loading="lazy" height="40px" width="40px" alt="Linux" />
-                        <span class="skill-label">Linux</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/tableau.svg" loading="lazy" height="40px" width="40px" alt="Linux" />
-                        <span class="skill-label">Tableau</span>
-                    </span>
-                    <span class="skill-item">
-                        <img src="static/images/postman.png" loading="lazy" height="40px" width="40px" alt="Postman" />
-                        <span class="skill-label">Postman</span>
-                    </span>
-                </div>
-            </div>
-
-            <a href="{{url_for('skills')}}" class="special">more</a>
         </div>
-    </div>
-</section>
-
-
-        {% include "project_section.html" %}
-        {% include "achievement.html" %}
-<!--        <section id="four" class="wrapper alt style1">-->
-<!--    <div class="inner">-->
-<!--        <h2 class="major">Recent Activities</h2>-->
-<!--        <section class="features">-->
-<!--            <article>-->
-<!--                <a class="image"><img src="static/images/conference.webp" loading="lazy" alt="ICT-CEEL Conference" /></a>-->
-<!--                <h3 class="major">Presenting at ICT-CEEL 2023</h3>-->
-<!--                <p>Presented our paper, “Automation of Driving License Test Using Computer Vision and Image Processing,” at the International Conference on Technologies for Computer, Electrical, Electronics & Communication (ICT-CEEL 2023), held by Khwopa Engineering College and IEEE PES from October 11–13, 2023. Received the Best Paper Award for this work.</p>-->
-<!--            </article>-->
-<!--            <article>-->
-<!--                <a class="image"><img src="static/images/hackathon.webp" loading="lazy" alt="All Nepal Hackathon Winner" /></a>-->
-<!--                <h3 class="major">Winning All Nepal Hackathon 2023</h3>-->
-<!--                <p>Led Vision Architects in a three-day All Nepal Hackathon in the e-Governance category. Our project automated the driving license test for four-wheelers using computer vision, enhancing efficiency for Nepal’s Department of Transport. Secured first place in the competition.</p>-->
-<!--            </article>-->
-<!--            <article>-->
-<!--                <a class="image"><img src="static/images/uturn.webp" loading="lazy" alt="YOLOv5 Object Detection" /></a>-->
-<!--                <h3 class="major">Car and Sidelight Detection with YOLOv5</h3>-->
-<!--                <p>Developed a custom YOLOv5 model for real-time detection of cars and sidelights, achieving 95% mAP. Integrated into the CarSight prototype for automated driving test evaluation.</p>-->
-<!--            </article>-->
-<!--            <article>-->
-<!--                <a class="image" href="https://www.youtube.com/watch?v=6BYRCFqEbyg"><img src="static/images/IMG_0020.jpg" loading="lazy" alt="Kantipur TV Interview" /></a>-->
-<!--                <h3 class="major">National TV Interview on Kantipur Television</h3>-->
-<!--                <p>Featured on Kantipur Television as team leader of Vision Architects after winning the All Nepal Hackathon 2023. Discussed our e-Governance project automating driving license tests with computer vision, highlighting its impact and innovation.</p>-->
-<!--                <a href="https://www.youtube.com/watch?v=6BYRCFqEbyg" target="_blank" class="special">Watch on YouTube</a>-->
-<!--            </article>-->
-<!--            <article>-->
-<!--                <a class="image"><img src="static/images/recent_work/google_play_store_analysis.webp" loading="lazy" alt="Google Play Store Analysis" /></a>-->
-<!--                <h3 class="major">Google Play Store App Analysis</h3>-->
-<!--                <p>Analyzed a dataset of Google Play Store apps using Python, Pandas, and visualization libraries (Matplotlib, Seaborn) to uncover trends in app performance and user ratings.</p>-->
-<!--                <a href="https://github.com/Prashanna-Raj-Pandit/Analysis-of-dataset-of-Nobel-Prize-Winners" target="_blank" class="special">View on GitHub</a>-->
-<!--            </article>-->
-<!--            <article>-->
-<!--                <a class="image"><img src="static/images/recent_work/fb_website.webp" loading="lazy" alt="FootBalance Nepal Website" /></a>-->
-<!--                <h3 class="major">Website Development: FootBalance Nepal</h3>-->
-<!--                <p>Designed and deployed a dynamic website for FootBalance Nepal using Flask and Jinja templating, hosted on Render. Integrated responsive design and modern UI/UX principles.</p>-->
-<!--                <a href="https://footbalancenepal.onrender.com/" target="_blank" class="special">Visit Site</a>-->
-<!--                <a href="https://github.com/Prashanna-Raj-Pandit/FootBalance-Nepal" target="_blank" class="special">View on GitHub</a>-->
-<!--            </article>-->
-<!--        </section>-->
-<!--        <ul class="actions">-->
-<!--            <li><a href="{{url_for('all_recent_work')}}" class="button">Browse All Projects</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</section>-->
-
     </section>
 
-    <!-- Footer -->
-    {% include "footer.html"%}
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>{{ data.about.intro }}</p>
+                <p>{{ data.about.description }}</p>
+                <p>{{ data.about.interests }}</p>
+            </div>
 
-</div>
+            <div class="skills-showcase">
+                <h3 class="skills-showcase-title">Technical Skills</h3>
 
-<!-- Scripts -->
-<script src="static/assets/js/jquery.min.js" defer></script>
-<script src="static/assets/js/jquery.scrollex.min.js" defer></script>
-<script src="static/assets/js/browser.min.js" defer></script>
-<script src="static/assets/js/breakpoints.min.js" defer></script>
-<script src="static/assets/js/util.js" defer></script>
-<script src="static/assets/js/main.js" defer></script>
-<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                var flashMessages = document.getElementById('flash-messages');
-                if (flashMessages) {
-                    flashMessages.parentNode.removeChild(flashMessages);
-                }
-            }, 5000); // Remove after 5 seconds (5000 milliseconds)
-        });
+                <div class="skills-category-simple">
+                    <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
 
+                <div class="skills-category-simple">
+                    <h4><i class="fas fa-layer-group"></i> Frameworks & Libraries</h4>
+                    <div class="skills-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Scikit-Learn</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">YOLO</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Selenium</span>
+                    </div>
+                </div>
 
+                <div class="skills-category-simple">
+                    <h4><i class="fas fa-tools"></i> Tools & Software</h4>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Curser</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Google Colab</span>
+                        <span class="skill-tag">Mlflow</span>
+                    </div>
+                </div>
 
+                <div class="skills-category-simple">
+                    <h4><i class="fas fa-microchip"></i> Concepts</h4>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">Data Preprocessing</span>
+                        <span class="skill-tag">Neural Networks/DL</span>
+                        <span class="skill-tag">Time Series</span>
+                        <span class="skill-tag">ML Pipeline</span>
+                        <span class="skill-tag">Model Deployment</span>
+                        <span class="skill-tag">Cloud Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</script>
+    <section id="experience" class="section section-dark">
+        <div class="container-wide">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-grid">
+                {% for exp in data.experience %}
+                <div class="experience-card">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3>{{ exp.position }}</h3>
+                            <span class="exp-date">{{ exp.duration }}</span>
+                        </div>
+                        <div class="exp-org-group">
+                            <h4>{{ exp.organization }}</h4>
+                            <span class="exp-location">{{ exp.location }}</span>
+                        </div>
+                    </div>
+                    <p class="exp-description">{{ exp.description }}</p>
+                    {% if exp.responsibilities %}
+                    <ul class="exp-responsibilities">
+                        {% for resp in exp.responsibilities %}
+                        <li><i class="fas fa-chevron-right"></i> {{ resp }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="Computer Vision">Computer Vision</button>
+                <button class="filter-btn" data-category="Data Analysis">Data Analysis</button>
+                <button class="filter-btn" data-category="Web Development">Web Development</button>
+                <button class="filter-btn" data-category="Backend Development">Backend</button>
+            </div>
+            <div class="projects-grid">
+                {% for project in data.projects %}
+                <a href="{{ url_for('project_detail', project_id=project.id) }}" class="project-card" data-category="{{ project.category }}">
+                    <div class="project-image-wrapper">
+                        <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}">
+                        <div class="project-overlay">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">{{ project.category }}</span>
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.short_description }}</p>
+                        <div class="project-tech">
+                            {% for tech in project.technologies[:3] %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
+    <section id="tableau-dashboards" class="section">
+        <div class="container">
+            <h2 class="section-title">Tableau Dashboards</h2>
+            <div class="tableau-grid">
+                {% for dashboard in data.tableau_dashboards %}
+                <div class="tableau-card" onclick="openLightbox('{{ dashboard.id }}')">
+                    <div class="tableau-image-wrapper">
+                        <img src="{{ url_for('static', filename=dashboard.image) }}" alt="{{ dashboard.title }}">
+                        <div class="tableau-hover-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <p>Click to View</p>
+                        </div>
+                    </div>
+                    <div class="tableau-content">
+                        <h3>{{ dashboard.title }}</h3>
+                        <p>{{ dashboard.description }}</p>
+                    </div>
+                </div>
 
+                <!-- Lightbox Modal -->
+                <div id="lightbox-{{ dashboard.id }}" class="lightbox-modal">
+                    <span class="lightbox-close" onclick="closeLightbox('{{ dashboard.id }}')">&times;</span>
+                    <div class="lightbox-content">
+                        <img src="{{ url_for('static', filename=dashboard.image) }}" alt="{{ dashboard.title }}">
+                        <div class="lightbox-footer">
+                            <h3>{{ dashboard.title }}</h3>
+                            <a href="{{ url_for('static', filename=dashboard.download_url) }}" download class="btn btn-primary lightbox-download">
+                                <i class="fas fa-download"></i> Get .twbx File
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-horizontal">
+                {% for achievement in data.achievements %}
+                <a href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}" class="achievement-card-horizontal">
+                    <div class="achievement-grid-layout">
+                        <div class="achievement-image-left">
+                            <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">
+                        </div>
+                        <div class="achievement-content-right">
+                            <div class="achievement-icon-h">
+                                <i class="fas {{ achievement.icon }}"></i>
+                            </div>
+                            <span class="achievement-type">{{ achievement.type }}</span>
+                            <h3>{{ achievement.title }}</h3>
+                            <p>{{ achievement.description }}</p>
+                            <div class="achievement-meta">
+                                <span class="achievement-venue"><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>
+                                <span class="achievement-date"><i class="fas fa-calendar"></i> {{ achievement.date }}</span>
+                            </div>
+                            <div class="achievement-arrow">
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+<!--    <section id="certifications" class="section">-->
+<!--        <div class="container">-->
+<!--            <h2 class="section-title">Certifications</h2>-->
+<!--            <div class="certifications-columns">-->
+<!--                {% for cert in data.certifications %}-->
+<!--                <div class="certification-card-column">-->
+<!--                    <div class="cert-image-wrapper">-->
+<!--                        <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">-->
+<!--                    </div>-->
+<!--                    <div class="cert-icon-column">-->
+<!--                        <i class="fab {{ cert.icon }}"></i>-->
+<!--                    </div>-->
+<!--                    <div class="cert-content-column">-->
+<!--                        <h3>{{ cert.title }}</h3>-->
+<!--                        <p class="cert-issuer-column">{{ cert.issuer }}</p>-->
+<!--                        <p class="cert-description">{{ cert.description }}</p>-->
+<!--                        <span class="cert-date-column"><i class="fas fa-calendar"></i> {{ cert.date }}</span>-->
+<!--                    </div>-->
+<!--                    {% if cert.url %}-->
+<!--                    <a href="{{ cert.url }}" target="_blank" class="cert-view-btn">-->
+<!--                        <i class="fas fa-external-link-alt"></i> View Certificate-->
+<!--                    </a>-->
+<!--                    {% endif %}-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <p class="contact-text">I'm always open to discussing research opportunities, collaborations, or exciting projects. Feel free to reach out!</p>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Location</h3>
+                        <p>{{ data.location }}</p>
+                    </div>
+<!--                    <div class="contact-card">-->
+<!--                        <i class="fas fa-phone"></i>-->
+<!--                        <h3>Phone</h3>-->
+<!--                        <p>{{ data.phone }}</p>-->
+<!--                    </div>-->
+                </div>
+
+                <div class="social-links-large">
+                    {% for social in data.social %}
+                    <a href="{{ social.url }}" target="_blank" class="social-btn">
+                        <i class="fab {{ social.icon }}"></i>
+                        <span>{{ social.name }}</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 {{ data.name }}. All rights reserved.</p>
+            <p class="footer-code">&lt;/Engineer&gt;</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

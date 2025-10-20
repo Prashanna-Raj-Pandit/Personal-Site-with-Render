@@ -1,0 +1,573 @@
+{
+  "name": "Prashanna Raj Pandit",
+  "title": "Graduate Research Assistant",
+  "subtitle": "Computer Science Student",
+  "email": "ppandit.email@siue.edu",
+  "phone": "+1 (XXX) XXX-XXXX",
+  "location": "Edwardsville, Illinois",
+  "profile_image": "images/profile.png",
+  "bio": "Graduate Research Assistant at Southern Illinois University Edwardsville specializing in Computer Vision, Artificial Intelligence, and Machine Learning. Passionate about leveraging AI for automation, pattern recognition, and solving real-world problems.",
+  
+  "social": [
+    {
+      "name": "GitHub",
+      "icon": "fa-github",
+      "url": "https://github.com/Prashanna-Raj-Pandit"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "fa-linkedin-in",
+      "url": "https://www.linkedin.com/in/prashanna-raj-pandit-1576b7237/"
+    },
+    {
+      "name": "Facebook",
+      "icon": "fa-facebook-f",
+      "url": "https://www.facebook.com/prashanna.raj.5"
+    },
+    {
+      "name": "Instagram",
+      "icon": "fa-instagram",
+      "url": "https://www.instagram.com/prashannaraj5950"
+    }
+  ],
+
+  "about": {
+    "intro": "I'm a passionate Computer Science graduate student specializing in Computer Vision, Artificial Intelligence, and Machine Learning. Currently working as a Graduate Research Assistant at Southern Illinois University Edwardsville.",
+    "description": "My research focuses on leveraging advanced AI techniques for automation, pattern recognition, and solving real-world problems. I have hands-on experience in developing predictive models, implementing computer vision systems, and creating intelligent applications.",
+    "interests": "When I'm not coding or conducting research, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community."
+  },
+
+"experience": [
+  {
+    "position": "Research Assistant",
+    "organization": "Southern Illinois University Edwardsville",
+    "duration": "Jan 2025 – Present",
+    "location": "Edwardsville, IL, USA",
+    "description": "Research in gait analysis and AI-based motion understanding using deep learning and signal processing.",
+    "responsibilities": [
+      "Extracted 2D keypoints from 106 video datasets using OpenPose and processed JSON data with Pandas and NumPy to compute gait kinematic features such as stride length, cadence, and joint angles, demonstrating robust data preprocessing methods for scalable AI model development.",
+      "Engineered a multimodal dataset for deep neural networks by preprocessing gait time-series data via cubic spline interpolation, Savitzky-Golay smoothing, gait phase detection, and turn removal, aligning with best practices in feature engineering and data preparation.",
+      "Developed a logistic regression baseline achieving 72% accuracy and a deep learning model (80K parameters) achieving 88% accuracy on gait classification, showcasing experience in building and optimizing machine learning solutions."
+    ]
+  },
+  {
+    "position": "Software Engineer",
+    "organization": "Vrit Technologies",
+    "duration": "Jan 2023 – Jul 2024",
+    "location": "Kathmandu, Nepal",
+    "description": "Full-stack web development and backend optimization for scalable AI-ready systems.",
+    "responsibilities": [
+      "Designed and deployed the FootBalance-Nepal website with a Flask backend and Sheety API integration, improving SEO score from 71 to 88 and performance score from 81 to 95, demonstrating expertise in scalable web deployment.",
+      "Collaborated on full-stack development and optimized backend workflows for scalability and maintainability, reflecting an agile approach and readiness to integrate AI/ML components within larger systems.",
+      "Utilized Git for version control to ensure code consistency and facilitate team collaboration, supporting robust software development processes similar to MLOps workflows."
+    ]
+  }
+],
+
+  "research_interests": [
+    "Artificial Intelligence",
+    "Computer Vision and its implementation in automation",
+    "Pattern Recognition",
+    "Intrusion Detection",
+    "Computational Biology"
+  ],
+
+  "achievements": [
+  {
+    "id": "all-nepal-hackathon-2023",
+    "title": "Winner – All Nepal Hackathon 2023",
+    "type": "Competition",
+    "description": "Led Vision Architects to victory in the e-Governance category at the All Nepal Hackathon 2023.",
+    "venue": "All Nepal Hackathon 2023",
+    "date": "2023",
+    "icon": "fa-trophy",
+    "details": "Led a three-day hackathon project that automated the four-wheeler driving license test using computer vision for Nepal’s Department of Transport. The solution improved testing efficiency and accuracy, earning first place among national teams.",
+    "url": "",
+    "image": "images/achievements/hackathon.jpeg"
+  },
+  {
+    "id": "kantipur-tv-interview",
+    "title": "National TV Interview on Kantipur Television",
+    "type": "Media Recognition",
+    "description": "Featured on Kantipur Television as team leader of Vision Architects following the All Nepal Hackathon 2023 victory.",
+    "venue": "Kantipur Television, Nepal",
+    "date": "2023",
+    "icon": "fa-tv",
+    "details": "Discussed the e-Governance project automating driving license tests using computer vision, highlighting its innovation and societal impact. Shared insights on applying AI solutions to public service systems.",
+    "url": "https://www.youtube.com/watch?v=YOUR_VIDEO_LINK",
+    "image": "images/achievements/tv-interview.jpg"
+  },
+  {
+    "id": "best-paper-award-ictceel",
+    "title": "Best Paper Award – ICT-CEEL 2023",
+    "type": "Academic Award",
+    "description": "Received Best Paper Award at ICT-CEEL 2023 for research on automating driving license tests using computer vision.",
+    "venue": "International Conference on Technologies for Computer, Electrical, Electronics & Communication (ICT-CEEL 2023)",
+    "date": "2023",
+    "icon": "fa-award",
+    "details": "Honored with the Best Paper Award for the paper 'Automation of Driving License Test using Computer Vision and Image Processing,' recognizing innovation and research excellence in AI-driven automation.",
+    "url": "https://ictceel.khwopaconference.com/uploads/conferencepaper/fullpaper/1037.pdf",
+    "image": "images/achievements/bestpaper.png"
+  },
+  {
+    "id": "ictceel-presentation",
+    "title": "Presented at International Conference – ICT-CEEL 2023",
+    "type": "Conference Presentation",
+    "description": "Presented research work on automation of driving license test using computer vision at ICT-CEEL 2023.",
+    "venue": "International Conference on Technologies for Computer, Electrical, Electronics & Communication (ICT-CEEL 2023)",
+    "date": "2023",
+    "icon": "fa-chalkboard-teacher",
+    "details": "Delivered a presentation on developing a vision-based automated driving license test evaluation system, demonstrating practical applications of AI and image processing in transportation and public service systems.",
+    "url": "https://ictceel.khwopaconference.com/",
+    "image": "images/achievements/conference.webp"
+  }
+],
+
+  "skills": {
+    "general_cs": [
+      "Data Structure and Algorithm",
+      "Operating System (Linux and Shell Commands)",
+      "Engineering Mathematics, Calculus, Linear Algebra",
+      "Probability and Statistics",
+      "Machine Learning",
+      "Computer Architecture",
+      "Microprocessor and Microcontroller",
+      "Computer Network"
+    ],
+    "advanced_areas": {
+      "Computer Vision": [
+        "Image Processing",
+        "Object Detection (YOLO)",
+        "Pose Estimation (OpenPose & Mediapipe)",
+        "Real-Time Video Analysis"
+      ],
+      "Artificial Intelligence": [
+        "Machine Learning",
+        "Feature Engineering",
+        "Predictive Modeling",
+        "AI-Driven Automation"
+      ],
+      "Data Science": [
+        "Data Cleaning",
+        "Data Visualization",
+        "Statistical Analysis",
+        "Time-Series Analysis"
+      ],
+      "Deep Learning": [
+        "Neural Networks",
+        "Convolutional Neural Networks (CNNs)",
+        "Model Training",
+        "Real-Time Inference"
+      ]
+    },
+    "programming_languages": [
+      {"name": "Python", "icon": "images/python1.webp"},
+      {"name": "C", "icon": "images/c1.webp"},
+      {"name": "C++", "icon": "images/cplus.webp"},
+      {"name": "R", "icon": "images/R.png"}
+    ],
+    "frameworks": [
+      {"name": "TensorFlow", "icon": "images/tf.png"},
+      {"name": "Scikit-Learn", "icon": "images/scikit-learn-logo.png"},
+      {"name": "Keras", "icon": "images/keras.png"},
+      {"name": "Flask", "icon": "images/recent_work/flask.webp"},
+      {"name": "OpenCV", "icon": "images/opencv.png"},
+      {"name": "YOLO", "icon": "images/yolo.png"},
+      {"name": "Pandas", "icon": "images/pandas.png"},
+      {"name": "NumPy", "icon": "images/numpy.png"},
+      {"name": "Matplotlib", "icon": "images/mat.png"},
+      {"name": "Selenium", "icon": "images/selinium.png"},
+      {"name": "SciPy", "icon": "images/selinium.png"}
+    ],
+    "tools": [
+      {"name": "Git", "icon": ""},
+      {"name": "GitHub", "icon": ""},
+      {"name": "Docker", "icon": ""},
+      {"name": "Tableau", "icon": ""},
+      {"name": "PostgreSQL", "icon": ""},
+      {"name": "Linux", "icon": ""},
+      {"name": "MLflow", "icon": ""},
+      {"name": "Jupyter Notebook", "icon": ""},
+      {"name": "Cursor", "icon": ""}
+    ],
+    "hardware": [
+      {"name": "Machine Learning", "icon": ""},
+      {"name": "Statistical Modeling", "icon": ""},
+      {"name": "Data Preprocessing", "icon": ""},
+      {"name": "Neural Networks", "icon": ""},
+      {"name": "Time Series Analysis", "icon": ""},
+      {"name": "ML Pipeline", "icon": ""},
+      {"name": "Model Deployment", "icon": ""},
+      {"name": "Cloud Services", "icon": ""}
+    ]
+  },
+
+  "projects": [
+    {
+    "id": "igait",
+    "title": "iGAIT: Gait Analysis and AI-Based Motion Understanding",
+    "category": "Deep Learning / Computer Vision",
+    "short_description": "AI-based gait analysis using deep learning and signal processing for motion understanding.",
+    "description": "Developed a gait analysis system using OpenPose for 2D keypoint extraction from 106 videos, processed data with NumPy and Pandas to compute kinematic features such as stride length, cadence, and joint angles. Built logistic regression and deep learning models (80K parameters) achieving 72% and 88% accuracy, respectively.",
+    "image": "images/igait.png",
+    "technologies": ["Python", "OpenPose", "NumPy", "Pandas", "Deep Learning"],
+    "features": [
+      "2D keypoint extraction with OpenPose",
+      "Kinematic feature computation",
+      "Deep learning gait classification",
+      "Multimodal dataset engineering"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2024"
+  },
+    {
+    "id": "music-generation-rnn",
+    "title": "Music Generation using RNN (Let's Dance!)",
+    "category": "Deep Learning / Sequence Modeling",
+    "short_description": "Character-level music generation using LSTM-based RNNs trained on symbolic music data.",
+    "description": "Implemented an LSTM-based recurrent neural network to generate symbolic music in ABC notation. Used PyTorch to train embeddings, LSTM layers, and softmax output to predict sequential notes. Demonstrated temporal dependency learning and sequence prediction accuracy through iterative sampling.",
+    "image": "images/music-generation.png",
+    "technologies": ["Python", "PyTorch", "RNN", "LSTM"],
+    "features": [
+      "Character-level music modeling",
+      "Sequential sampling procedure",
+      "LSTM-based architecture",
+      "Softmax output generation"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2024"
+  },
+    {
+    "id": "debiasing-facial-detection",
+    "title": "Debiasing Facial Detection Systems",
+    "category": "AI Ethics / Computer Vision",
+    "short_description": "Implemented CNNs and DB-VAE for bias mitigation in facial detection systems.",
+    "description": "Developed CNN architectures for facial detection and integrated a Debiasing Variational Autoencoder (DB-VAE) to reweight training samples. Improved fairness by increasing sampling for underrepresented facial features, reducing demographic bias in model predictions.",
+    "image": "images/dbvae.png",
+    "technologies": ["Python", "TensorFlow", "VAE", "CNN"],
+    "features": [
+      "CNN-based facial detection",
+      "Latent variable reweighting",
+      "Fairness-aware training",
+      "Bias visualization"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2024"
+  },
+    {
+    "id": "reinforcement-learning",
+    "title": "Advanced AI Project: Reinforcement Learning",
+    "category": "AI / Reinforcement Learning",
+    "short_description": "Implemented Q-learning and Value Iteration agents for policy optimization and exploration.",
+    "description": "Implemented Value Iteration and Q-learning agents for policy optimization tasks. Experimented with discount factors, noise, and living rewards to analyze agent behavior in environments such as Pacman and bridge crossing. Developed Epsilon-Greedy exploration and Approximate Q-learning for scalability.",
+    "image": "images/pacman.png",
+    "technologies": ["Python", "Reinforcement Learning", "Q-Learning", "Value Iteration"],
+    "features": [
+      "Q-learning implementation",
+      "Policy evaluation and control",
+      "Exploration with epsilon-greedy",
+      "Approximate Q-learning for scalability"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2023"
+  },
+    {
+    "id": "mednlpify",
+    "title": "MedNLPify: Deep Learning for Biomedical Text Classification",
+    "category": "NLP / Deep Learning",
+    "short_description": "NLP system for sentence classification in biomedical abstracts using hybrid embeddings.",
+    "description": "Developed deep learning models with token, character, and hybrid embeddings for classifying 200k PubMed RCT abstracts. Achieved 85.6% accuracy using a Tribrid model and deployed as a Flask web app and Chrome extension for biomedical text classification.",
+    "image": "images/mednlpfy.png",
+    "technologies": ["Python", "TensorFlow", "Flask", "NLP"],
+    "features": [
+      "Hybrid embedding architecture",
+      "Flask web deployment",
+      "Chrome extension integration",
+      "Biomedical sentence classification"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2023"
+  },
+    {
+    "id": "food-vision",
+    "title": "Food Vision Project",
+    "category": "Computer Vision / Transfer Learning",
+    "short_description": "Food classification model using transfer learning on the Food101 dataset.",
+    "description": "Trained transfer learning models (EfficientNetV2B0) with TensorFlow on Food101 dataset subsets. Compared feature extraction vs fine-tuning with and without data augmentation. Implemented checkpointing for best model saving and achieved robust food image classification.",
+    "image": "images/food-vision.png",
+    "technologies": ["TensorFlow", "CNN", "Transfer Learning"],
+    "features": [
+      "Transfer learning experiments",
+      "Data augmentation pipeline",
+      "Model checkpointing",
+      "Performance comparison"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2023"
+  },
+{
+    "id": "exfs2",
+    "title": "ExFS2: User-Space Virtual File System",
+    "category": "Systems Programming / File Systems",
+    "short_description": "Implemented an inode-based virtual file system supporting direct and indirect addressing.",
+    "description": "Built ExFS2, a user-space virtual file system emulating inode-based storage using C. Supported file creation, deletion, nested directories, and direct/single/double indirect block addressing. Designed bitmap-based allocation and implemented efficient space reuse and scalability.",
+    "image": "images/exfs2.png",
+    "technologies": ["C", "File Systems", "Memory Management"],
+    "features": [
+      "Inode-based architecture",
+      "Indirect block addressing",
+      "Dynamic inode/data segment creation",
+      "Bitmap-based allocation and reuse"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2023"
+  },
+{
+    "id": "traffic-sign-classification",
+    "title": "Traffic Sign Classification with Fine-Tuned VGG-16",
+    "category": "Computer Vision / Deep Learning",
+    "short_description": "Traffic sign classification using fine-tuned VGG-16 with TensorFlow.",
+    "description": "Fine-tuned a pre-trained VGG-16 model to classify 43 traffic sign classes from the GTSRB dataset. Implemented dataset preprocessing, model training, evaluation, and visualization pipeline. Demonstrated transfer learning performance on limited data.",
+    "image": "images/trafic-sign.png",
+    "technologies": ["TensorFlow", "VGG-16", "Transfer Learning"],
+    "features": [
+      "Dataset preprocessing",
+      "Fine-tuned CNN model",
+      "Training visualization",
+      "Accurate sign recognition"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2023"
+  },
+    {
+    "id": "user-level-threading",
+    "title": "User-Level Threading and Scheduling",
+    "category": "Operating Systems",
+    "short_description": "Implemented many-to-one user-level threading with Round Robin and Lottery schedulers.",
+    "description": "Developed a user-level threading library using ucontext for manual context switching and scheduling. Implemented Round Robin and Lottery schedulers, simulated preemption, yielding, and fairness experiments based on Waldspurger’s Lottery Scheduling paper.",
+    "image": "images/context-switch.jpeg",
+    "technologies": ["C", "ucontext", "Operating Systems"],
+    "features": [
+      "Round Robin scheduling",
+      "Lottery-based fairness scheduling",
+      "Manual context switching",
+      "Signal-based preemption handling"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2023"
+  },
+
+    {
+    "id": "delivery-route-planning",
+    "title": "Delivery Route Planning Optimization",
+    "category": "Algorithm Design / Optimization",
+    "short_description": "Optimized e-commerce delivery routes for Chicago using advanced algorithms.",
+    "description": "Designed an urban delivery route optimization system using OpenStreetMap data and compared Nearest Neighbor, Quad-Tree, and Floyd–Warshall algorithms for scalability, computational efficiency, and priority-aware delivery. Improved travel distance and runtime performance for multi-depot logistics simulation.",
+    "image": "images/delivery-route.png",
+    "technologies": ["Python", "NetworkX", "OpenStreetMap", "Graph Algorithms"],
+    "features": [
+      "Priority-aware delivery routing",
+      "Multi-depot regional analysis",
+      "Algorithm scalability testing",
+      "Real-world urban dataset simulation"
+    ],
+    "github": "",
+    "demo": "",
+    "date": "2024"
+  },
+    {
+      "id": "yolov5-car-detection",
+      "title": "Car and Sidelight Detection with YOLOv5",
+      "category": "Computer Vision",
+      "short_description": "Real-time detection of cars and sidelights using custom YOLOv5 model with 95% mAP accuracy.",
+      "description": "Developed a custom YOLOv5 object detection model for real-time detection of cars and sidelights, achieving 95% mean Average Precision (mAP). The model was integrated into the CarSight prototype for automated driving test evaluation, significantly improving the accuracy and efficiency of driving assessments.",
+      "image": "images/uturn.webp",
+      "technologies": ["Python", "YOLOv5", "OpenCV", "PyTorch", "Computer Vision"],
+      "features": [
+        "Custom trained YOLOv5 model with 95% mAP",
+        "Real-time video processing capability",
+        "Integration with CarSight automated testing system",
+        "Robust detection in various lighting conditions"
+      ],
+      "github": "https://github.com/Prashanna-Raj-Pandit/Object-Detection-for-Automation",
+      "demo": "",
+      "date": "2023"
+    },
+    {
+      "id": "google-playstore-analysis",
+      "title": "Google Play Store App Analysis",
+      "category": "Data Analysis",
+      "short_description": "Comprehensive analysis of Google Play Store apps using Python and data visualization libraries.",
+      "description": "Analyzed a comprehensive dataset of Google Play Store applications using Python, Pandas, Matplotlib, and Seaborn to uncover trends in app performance, user ratings, and market dynamics. The project revealed insights into app categories, pricing strategies, and factors influencing user engagement.",
+      "image": "images/recent_work/google_play_store_analysis.webp",
+      "technologies": ["Python", "Pandas", "Matplotlib", "Seaborn", "Data Analysis"],
+      "features": [
+        "Data cleaning and preprocessing of large datasets",
+        "Statistical analysis of app ratings and reviews",
+        "Visualization of trends across app categories",
+        "Insights into pricing strategies and user engagement"
+      ],
+      "github": "https://github.com/Prashanna-Raj-Pandit/Data-Analysis-and-Visualization",
+      "demo": "",
+      "date": "2023"
+    },
+    {
+      "id": "footbalance-nepal",
+      "title": "FootBalance Nepal Website",
+      "category": "Web Development",
+      "short_description": "Professional e-commerce website for FootBalance Nepal footwear company.",
+      "description": "Developed a modern, responsive website for FootBalance Nepal, a footwear company specializing in orthopedic and comfort footwear. The website features product catalogs, company information, and contact functionality built with modern web technologies.",
+      "image": "images/recent_work/fb_website.webp",
+      "technologies": ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      "features": [
+        "Responsive design for all devices",
+        "Product showcase and catalog",
+        "Contact form integration",
+        "Modern UI/UX design"
+      ],
+      "github": "https://github.com/Prashanna-Raj-Pandit/FootBalance-Nepal",
+      "demo": "https://footbalance-nepal.vercel.app/",
+      "date": "2023"
+    },
+    {
+      "id": "nobel-prize-analysis",
+      "title": "Nobel Prize Winners Analysis",
+      "category": "Data Analysis",
+      "short_description": "Statistical analysis of Nobel Prize winners throughout history.",
+      "description": "Comprehensive analysis of Nobel Prize winners dataset exploring patterns in awards across different categories, countries, and time periods. The project reveals interesting trends in scientific achievements and demographics of laureates.",
+      "image": "images/recent_work/nobel_prize1.webp",
+      "technologies": ["Python", "Pandas", "Data Visualization", "Statistical Analysis"],
+      "features": [
+        "Historical trend analysis",
+        "Geographic distribution of winners",
+        "Category-wise analysis",
+        "Demographic insights"
+      ],
+      "github": "https://github.com/Prashanna-Raj-Pandit/Data-Analysis-and-Visualization/tree/main/nobel_prize",
+      "demo": "",
+      "date": "2023"
+    },
+    {
+      "id": "blog-authentication",
+      "title": "Blog Webapp with User Authentication",
+      "category": "Web Development",
+      "short_description": "Full-stack blog application with secure user authentication and commenting system.",
+      "description": "Developed a full-featured blog web application with user authentication functionality using Flask. Users can sign in, create accounts, and comment on blog posts. The application implements secure authentication practices and database management.",
+      "image": "images/recent_work/blog_img.webp",
+      "technologies": ["Flask", "Python", "SQLAlchemy", "Authentication", "PostgreSQL"],
+      "features": [
+        "Secure user authentication",
+        "Comment system",
+        "User profile management",
+        "Database integration"
+      ],
+      "github": "",
+      "demo": "https://blogpost-with-user-authentication.onrender.com/",
+      "date": "2023"
+    },
+    {
+      "id": "flight-finder-bot",
+      "title": "Flight Finder Bot",
+      "category": "Backend Development",
+      "short_description": "Automated flight price tracker with notification system.",
+      "description": "Developed an automated bot that tracks flight prices and notifies users when prices fall below their specified threshold. Integrates multiple APIs including Tequila for flight data, Sheety for data management, and Twilio for SMS notifications.",
+      "image": "images/img.png",
+      "technologies": ["Python", "API Integration", "Tequila API", "Twilio", "Automation"],
+      "features": [
+        "Real-time price monitoring",
+        "SMS notification system",
+        "Multi-API integration",
+        "User-defined price thresholds"
+      ],
+      "github": "https://github.com/Prashanna-Raj-Pandit/Flight-Finder-bot",
+      "demo": "",
+      "date": "2023"
+    }
+
+
+  ],
+  "tableau_dashboards": [
+  {
+    "id": "dashboard-1",
+    "title": "Customer Churn Analysis",
+    "description": "Modeling Frequency of network use and customer complains for an Iranian Telecom Company.",
+    "image": "images/dashboards/Tableau_visualization_1.png",
+    "download_url": "files/dTableau_visualization_1.twbx"
+  },
+  {
+    "id": "dashboard-2",
+    "title": "Call and Tariff performance",
+    "description": "Modeling call failures and evaluating tariff plan preference for an Iranian Telecom Company.",
+    "image": "images/dashboards/Tableau_visualization_3.png",
+    "download_url": "files/Tableau_visualization_3.twbx"
+  }
+],
+
+  "certifications": [
+  {
+    "id": "100-days-of-python",
+    "title": "100 Days of Python Bootcamp",
+    "issuer": "Udemy / Dr.Angelia",
+    "date": "2024",
+    "credential_url": "",
+    "image": "images/certifications/100days-python.jpg",
+    "icon": "fa-python",
+    "description": "Completed a 100-day intensive Python bootcamp covering core programming, OOP, APIs, web development, and automation projects.",
+    "tags": ["Python", "Programming", "Projects"]
+  },
+  {
+    "id": "tensorflow-bootcamp",
+    "title": "TensorFlow Bootcamp",
+    "issuer": "Udemy / Mr.Daniel",
+    "date": "2024",
+    "credential_url": "",
+    "image": "images/tf.png",
+    "icon": "fa-python",
+    "description": "Completed hands-on deep learning bootcamp focused on building, training, and deploying neural networks using TensorFlow and Keras.",
+    "tags": ["TensorFlow", "Deep Learning", "Neural Networks"]
+  },
+  {
+    "id": "irb-research-behavioral",
+    "title": "IRB – Research in Behavioral Sciences",
+    "issuer": "Institutional Review Board (IRB)",
+    "date": "2024",
+    "credential_url": "",
+    "image": "images/certifications/irb.png",
+    "icon": "fa-user-check",
+    "description": "Completed IRB certification for conducting ethical research involving human participants in behavioral and social sciences.",
+    "tags": ["IRB", "Ethics", "Research"]
+  },
+  {
+    "id": "model-deployment-bootcamp",
+    "title": "Model Deployment Bootcamp",
+    "issuer": "Udemy",
+    "date": "2024",
+    "credential_url": "",
+    "image": "images/bg.jpg",
+    "icon": "fa-cloud-upload-alt",
+    "description": "Learned how to deploy ML models using Flask, Docker, and CI/CD pipelines, covering best practices in production-ready MLOps.",
+    "tags": ["MLOps", "Deployment", "Docker"]
+  },
+  {
+    "id": "agentic-ai-bootcamp",
+    "title": "Agentic AI Bootcamp",
+    "issuer": "Udemy",
+    "date": "2025",
+    "credential_url": "",
+    "image": "images/bg.jpg",
+    "icon": "fa-robot",
+    "description": "Explored building agentic AI systems including planning agents, tool use, and autonomous workflows using modern LLM frameworks.",
+    "tags": ["AI Agents", "Autonomy", "LLM"]
+  }
+]
+
+}

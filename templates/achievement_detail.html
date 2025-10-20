@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ achievement.title }} - {{ data.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="{{ url_for('skills') }}">Skills</a></li>
+                <li><a href="/#experience">Experience</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#achievements">Achievements</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="detail-hero">
+        <div class="container">
+            <a href="/#achievements" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Achievements
+            </a>
+            <div class="detail-header">
+                <div class="achievement-icon-large">
+                    <i class="fas {{ achievement.icon }}"></i>
+                </div>
+                <span class="detail-category">{{ achievement.type }}</span>
+                <h1>{{ achievement.title }}</h1>
+                <p class="detail-subtitle">{{ achievement.description }}</p>
+                <div class="detail-meta">
+                    <span><i class="fas fa-calendar-alt"></i> {{ achievement.date }}</span>
+                    <span><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if achievement.image %}
+    <section class="section">
+        <div class="container">
+            <div class="detail-image">
+                <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="section section-dark">
+        <div class="container">
+            <div class="detail-content-center">
+                <h2>Details</h2>
+                <p class="achievement-details">{{ achievement.details }}</p>
+
+                {% if achievement.url %}
+                <div class="achievement-actions">
+                    <a href="{{ achievement.url }}" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> View Document
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">More Achievements</h2>
+            <div class="more-achievements">
+                {% for a in data.achievements %}
+                {% if a.id != achievement.id %}
+                <a href="{{ url_for('achievement_detail', achievement_id=a.id) }}" class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas {{ a.icon }}"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <span class="achievement-type">{{ a.type }}</span>
+                        <h3>{{ a.title }}</h3>
+                        <p>{{ a.description }}</p>
+                    </div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 {{ data.name }}. All rights reserved.</p>
+            <p class="footer-code">&lt;/coder&gt;</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

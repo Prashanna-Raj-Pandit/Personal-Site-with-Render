@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: var(--color-1);
+        }
+        .error-content h1 {
+            font-size: 8rem;
+            color: var(--color-3);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .error-content h2 {
+            font-size: 2rem;
+            color: var(--color-4);
+            margin-bottom: 1rem;
+        }
+        .error-content p {
+            font-size: 1.2rem;
+            color: var(--color-3);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <h1>404</h1>
+            <h2>Page Not Found</h2>
+            <p>The page you're looking for doesn't exist.</p>
+            <a href="/" class="btn btn-primary">
+                <i class="fas fa-home"></i> Go Home
+            </a>
+        </div>
+    </div>
+</body>
+</html>

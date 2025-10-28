@@ -6,7 +6,7 @@
   "phone": "+1 (XXX) XXX-XXXX",
   "location": "Edwardsville, Illinois",
   "profile_image": "images/profile.png",
-  "bio": "Graduate Research Assistant at Southern Illinois University Edwardsville specializing in Computer Vision, Artificial Intelligence, and Machine Learning. Passionate about leveraging AI for automation, pattern recognition, and solving real-world problems.",
+  "bio": "Graduate Research Assistant at Southern Illinois University Edwardsville specializing in Data Analytics, ML, Computer Vision, and Deep learning. Passionate about leveraging AI for automation, pattern recognition, and solving real-world problems.",
   
   "social": [
     {
@@ -32,9 +32,10 @@
   ],
 
   "about": {
-    "intro": "I'm a passionate Computer Science graduate student specializing in Computer Vision, Artificial Intelligence, and Machine Learning. Currently working as a Graduate Research Assistant at Southern Illinois University Edwardsville.",
-    "description": "My research focuses on leveraging advanced AI techniques for automation, pattern recognition, and solving real-world problems. I have hands-on experience in developing predictive models, implementing computer vision systems, and creating intelligent applications.",
-    "interests": "When I'm not coding or conducting research, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community."
+    "intro": "I am a Computer Science graduate student at Southern Illinois University Edwardsville (SIUE), specializing in Statistics, Machine Learning, Deep Learning, and Computer Vision. I am originally from Nepal, where I completed my Bachelor’s degree in Electronics, Communication, and Information Engineering from Tribhuvan University, Pulchowk Campus—one of Nepal’s leading engineering institutes.",
+    "description": "Currently, I am working as a Graduate Research Assistant, focusing on developing deep learning models for multimodal time-series data, particularly in gait biomechanics and noisy real-world datasets. My work involves end-to-end data processing, model design, and high-performance computing on GPU clusters.",
+    "interests": "I have hands-on experience with TensorFlow, Keras, PyTorch, and OpenCV, and a strong foundation in predictive modeling, data preprocessing, and statistical analysis. My goal is to bridge theory and real-world applications through intelligent, data-driven systems.",
+    "hobby": "Outside of research, I enjoy exploring new technologies, contributing to open-source projects, and engaging with the developer community."
   },
 
 "experience": [

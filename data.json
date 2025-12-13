@@ -185,11 +185,15 @@
       {"name": "GitHub", "icon": ""},
       {"name": "Docker", "icon": ""},
       {"name": "Tableau", "icon": ""},
+      {"name": "Github Actions", "icon": ""},
+      {"name": "Airflow", "icon": ""},
+      {"name": "AWS (S3, EC2)", "icon": ""},
+
       {"name": "PostgreSQL", "icon": ""},
+            {"name": "Bash", "icon": ""},
+
       {"name": "Linux", "icon": ""},
-      {"name": "MLflow", "icon": ""},
-      {"name": "Jupyter Notebook", "icon": ""},
-      {"name": "Cursor", "icon": ""}
+      {"name": "MLflow", "icon": ""}
     ],
     "hardware": [
       {"name": "Machine Learning", "icon": ""},
@@ -529,9 +533,9 @@
     "id": "tensorflow-bootcamp",
     "title": "TensorFlow Bootcamp",
     "issuer": "Udemy / Mr.Daniel",
-    "date": "2024",
+    "date": "2025",
     "credential_url": "",
-    "image": "images/tf.png",
+    "image": "images/certifications/udemy_tf.jpg",
     "icon": "fa-python",
     "description": "Completed hands-on deep learning bootcamp focused on building, training, and deploying neural networks using TensorFlow and Keras.",
     "tags": ["TensorFlow", "Deep Learning", "Neural Networks"]
@@ -549,12 +553,12 @@
   },
   {
     "id": "model-deployment-bootcamp",
-    "title": "Model Deployment Bootcamp",
+    "title": "Deployment of Machine Learning Models",
     "issuer": "Udemy",
-    "date": "2024",
+    "date": "2025",
     "credential_url": "",
-    "image": "images/bg.jpg",
-    "icon": "fa-cloud-upload-alt",
+    "image": "images/certifications/udemy_ml.jpg",
+    "icon": "fa-python",
     "description": "Learned how to deploy ML models using Flask, Docker, and CI/CD pipelines, covering best practices in production-ready MLOps.",
     "tags": ["MLOps", "Deployment", "Docker"]
   },
@@ -562,7 +566,7 @@
     "id": "agentic-ai-bootcamp",
     "title": "Agentic AI Bootcamp",
     "issuer": "Udemy",
-    "date": "2025",
+    "date": "2026",
     "credential_url": "",
     "image": "images/bg.jpg",
     "icon": "fa-robot",

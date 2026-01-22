@@ -34,7 +34,7 @@
   "about": {
     "intro": "I am a Computer Science graduate student at Southern Illinois University Edwardsville (SIUE), specializing in Statistics, Machine Learning, Deep Learning, and Computer Vision. I am originally from Nepal, where I completed my Bachelor’s degree in Electronics, Communication, and Information Engineering from Tribhuvan University, Pulchowk Campus—one of Nepal’s leading engineering institutes.",
     "description": "Currently, I am working as a Graduate Research Assistant, focusing on developing deep learning models for multimodal time-series data, particularly in gait biomechanics and noisy real-world datasets. My work involves end-to-end data processing, model design, and high-performance computing on GPU clusters.",
-    "interests": "I have hands-on experience with TensorFlow, Keras, PyTorch, and OpenCV, and a strong foundation in predictive modeling, data preprocessing, and statistical analysis. My goal is to bridge theory and real-world applications through intelligent, data-driven systems.",
+    "interests": "I have hands-on experience with TensorFlow, Keras, PyTorch, and OpenCV, along with a strong foundation in predictive modeling, data preprocessing, and statistical analysis. I also work with cloud platforms and MLOps practices—building, containerizing, and deploying scalable machine learning pipelines using tools like Docker, CI/CD, and cloud infrastructure. My goal is to bridge theory and real-world applications by developing reliable, intelligent, and data-driven systems.",
     "hobby": "Outside of research, I enjoy exploring new technologies, contributing to open-source projects, and engaging with the developer community."
   },
 
@@ -46,9 +46,14 @@
     "location": "Edwardsville, IL, USA",
     "description": "Research in gait analysis and AI-based motion understanding using deep learning and signal processing.",
     "responsibilities": [
-      "Extracted 2D keypoints from 106 video datasets using OpenPose and processed JSON data with Pandas and NumPy to compute gait kinematic features such as stride length, cadence, and joint angles, demonstrating robust data preprocessing methods for scalable AI model development.",
-      "Engineered a multimodal dataset for deep neural networks by preprocessing gait time-series data via cubic spline interpolation, Savitzky-Golay smoothing, gait phase detection, and turn removal, aligning with best practices in feature engineering and data preparation.",
-      "Developed a logistic regression baseline achieving 72% accuracy and a deep learning model (80K parameters) achieving 88% accuracy on gait classification, showcasing experience in building and optimizing machine learning solutions."
+
+"Designed and implemented end-to-end data processing pipelines by extracting 2D pose keypoints from noisy video datasets using OpenPose; processed large-scale JSON data with Python (Pandas, NumPy), OpenCV, and Bash scripting to compute clinically relevant gait features such as gait cycle, stride length, cadence, and joint angles.",
+
+"Applied statistical methods and feature engineering to gait time-series data, including cubic spline interpolation, Savitzky–Golay smoothing, gait phase segmentation, and turn removal; constructed a clean, multimodal dataset optimized for deep learning models and visualized gait patterns using Matplotlib and Seaborn.",
+
+"Developed and trained sequential deep learning models (LSTM) for autism classification, achieving 88% accuracy, and performed model optimization through validation, class balancing, and performance analysis.",
+"Packaged trained machine learning models using Docker and deployed them through RESTful APIs, integrating them into a production-ready inference pipeline with CI/CD automation to support scalable, repeatable deployments and seamless integration with a web-based application."
+
     ]
   },
   {
@@ -58,9 +63,13 @@
     "location": "Kathmandu, Nepal",
     "description": "Full-stack web development and backend optimization for scalable AI-ready systems.",
     "responsibilities": [
-      "Designed and deployed the FootBalance-Nepal website with a Flask backend and Sheety API integration, improving SEO score from 71 to 88 and performance score from 81 to 95, demonstrating expertise in scalable web deployment.",
-      "Collaborated on full-stack development and optimized backend workflows for scalability and maintainability, reflecting an agile approach and readiness to integrate AI/ML components within larger systems.",
-      "Utilized Git for version control to ensure code consistency and facilitate team collaboration, supporting robust software development processes similar to MLOps workflows."
+
+
+
+"Built and deployed a Flask-based web application with RESTful APIs, leveraging SQL-backed structured data models and JSON-based data exchange to support analytics, reporting, and backend business logic; improved system performance and SEO metrics by 20%.",
+"Designed and maintained data workflows using SQL queries for data retrieval, transformation, and validation, enabling reliable storage, querying, and integration of application data across services.",
+"Implemented CI/CD pipelines using GitHub Actions and Docker in a Linux environment, automating testing and deployment and reducing manual release effort by 40%, while collaborating with the team using Git and Bash scripting."
+
     ]
   }
 ],

@@ -169,7 +169,9 @@
             <h2 class="section-title">Experience</h2>
             <div class="experience-grid">
                 {% for exp in data.experience %}
-                <div class="experience-card{% if exp.same_org_as_next %} same-organization{% endif %}{% if loop.index > 1 and data.experience[loop.index - 2].get('same_org_as_next') %} continuing-organization{% endif %}">
+                {% set is_same_org = exp.get('same_org_as_next', False) %}
+                {% set is_continuing = loop.index > 1 and data.experience[loop.index - 2].get('same_org_as_next', False) %}
+                <div class="experience-card{% if is_same_org %} same-organization{% endif %}{% if is_continuing %} continuing-organization{% endif %}">
                     <div class="exp-layout">
                         <!-- Organization Logo/Icon -->
                         <div class="exp-logo">
@@ -184,7 +186,7 @@
                                     <span class="exp-date">{{ exp.duration }}</span>
                                 </div>
                                 <div class="exp-org-row">
-                                    {% if not (loop.index > 1 and data.experience[loop.index - 2].get('same_org_as_next')) %}
+                                    {% if not is_continuing %}
                                     <h4>{{ exp.organization }}</h4>
                                     <span class="separator">•</span>
                                     {% endif %}

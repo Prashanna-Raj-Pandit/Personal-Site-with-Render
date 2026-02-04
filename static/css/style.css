@@ -1330,7 +1330,7 @@ body {
     padding-top: 1rem;
 }
 
-/* Last role in same org gets bottom border */
+/* Last role in same org gets bottom border (not followed by another same-org role) */
 .experience-card.continuing-organization:not(.same-organization) {
     border-bottom: 1px solid rgba(157, 178, 191, 0.2);
     padding-bottom: 1.5rem;

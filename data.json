@@ -50,7 +50,9 @@
 "Assisted students in designing modular, object-oriented software systems, emphasizing SDLC best practices, clean architecture, and maintainable code. (CS 325)",
       "Guided students in building CI/CD pipelines, Docker-based containerization, and REST API integration for production-style applications.(CS 325)",
       "Mentored students in data processing pipelines, including data cleaning, feature engineering, exploratory data analysis, and model evaluation. (CS 584)"
-    ]
+    ],
+    "same_org_as_next": true,
+    "icon": "fa-university"
   },
   {
     "position": "Research Assistant",
@@ -67,7 +69,8 @@
 "Developed and trained sequential deep learning models (LSTM) for autism classification, achieving 88% accuracy, and performed model optimization through validation, class balancing, and performance analysis.",
 "Packaged trained machine learning models using Docker and deployed them through RESTful APIs, integrating them into a production-ready inference pipeline with CI/CD automation to support scalable, repeatable deployments and seamless integration with a web-based application."
 
-    ]
+    ],
+    "icon": "fa-university"
   },
   {
     "position": "Software Engineer",
@@ -83,7 +86,8 @@
 "Designed and maintained data workflows using SQL queries for data retrieval, transformation, and validation, enabling reliable storage, querying, and integration of application data across services.",
 "Implemented CI/CD pipelines using GitHub Actions and Docker in a Linux environment, automating testing and deployment and reducing manual release effort by 40%, while collaborating with the team using Git and Bash scripting."
 
-    ]
+    ],
+    "icon": "fa-briefcase"
   }
 ],
 

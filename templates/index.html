@@ -169,7 +169,7 @@
             <h2 class="section-title">Experience</h2>
             <div class="experience-grid">
                 {% for exp in data.experience %}
-                <div class="experience-card{% if exp.same_org_as_next %} same-organization{% endif %}{% if loop.index > 1 and data.experience[loop.index - 2].same_org_as_next %} same-organization-last{% endif %}">
+                <div class="experience-card{% if exp.same_org_as_next %} same-organization{% endif %}{% if loop.index > 1 and data.experience[loop.index - 2].get('same_org_as_next') %} continuing-organization{% endif %}">
                     <div class="exp-layout">
                         <!-- Organization Logo/Icon -->
                         <div class="exp-logo">
@@ -184,8 +184,10 @@
                                     <span class="exp-date">{{ exp.duration }}</span>
                                 </div>
                                 <div class="exp-org-row">
+                                    {% if not (loop.index > 1 and data.experience[loop.index - 2].get('same_org_as_next')) %}
                                     <h4>{{ exp.organization }}</h4>
                                     <span class="separator">•</span>
+                                    {% endif %}
                                     <span class="exp-location">{{ exp.location }}</span>
                                 </div>
                             </div>
@@ -233,13 +235,12 @@
                     <div class="project-image-wrapper">
                         <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}">
                         <div class="project-overlay">
-                            <i class="fas fa-arrow-right"></i>
+                            <p class="project-overlay-text">{{ project.short_description[:150] }}{% if project.short_description|length > 150 %}...{% endif %}</p>
                         </div>
                     </div>
                     <div class="project-content">
                         <span class="project-category">{{ project.category }}</span>
                         <h3>{{ project.title }}</h3>
-                        <p>{{ project.short_description }}</p>
                         <div class="project-tech">
                             {% for tech in project.technologies[:3] %}
                             <span class="tech-tag">{{ tech }}</span>
@@ -330,18 +331,14 @@
                     <div class="cert-image-wrapper">
                         <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">
                     </div>
-                    <div class="cert-icon-column">
-                        <i class="fab {{ cert.icon }}"></i>
-                    </div>
                     <div class="cert-content-column">
                         <h3>{{ cert.title }}</h3>
                         <p class="cert-issuer-column">{{ cert.issuer }}</p>
-                        <p class="cert-description">{{ cert.description }}</p>
                         <span class="cert-date-column"><i class="fas fa-calendar"></i> {{ cert.date }}</span>
                     </div>
                     {% if cert.url %}
                     <a href="{{ cert.url }}" target="_blank" class="cert-view-btn">
-                        <i class="fas fa-external-link-alt"></i> View Certificate
+                        <i class="fas fa-external-link-alt"></i> View
                     </a>
                     {% endif %}
                 </div>

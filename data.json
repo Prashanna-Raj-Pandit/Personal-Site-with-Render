@@ -461,13 +461,24 @@
 ],
 
   "certifications": [
+      {
+    "id": "cloud-practitioner",
+    "title": "AWS Cloud Practitioner",
+    "issuer": "AWS",
+    "date": "2024",
+    "credential_url": "https://www.credly.com/badges/84508094-0d37-4679-b5ce-819c0d480b8c/public_url",
+    "image": "images/certifications/aws.png",
+    "icon": "fa-python",
+    "description": "",
+    "tags": ["Python", "Programming", "Projects"]
+  },
   {
     "id": "100-days-of-python",
     "title": "100 Days of Python Bootcamp",
-    "issuer": "Udemy / Dr.Angelia",
+    "issuer": "Udemy",
     "date": "2024",
-    "credential_url": "",
-    "image": "images/certifications/100days-python.jpg",
+    "credential_url": "https://www.udemy.com/certificate/UC-216c7779-217e-45cd-a19f-b9fe00580bd0/",
+    "image": "images/certifications/udemy.png",
     "icon": "fa-python",
     "description": "Completed a 100-day intensive Python bootcamp covering core programming, OOP, APIs, web development, and automation projects.",
     "tags": ["Python", "Programming", "Projects"]
@@ -475,21 +486,21 @@
   {
     "id": "tensorflow-bootcamp",
     "title": "TensorFlow Bootcamp",
-    "issuer": "Udemy / Mr.Daniel",
+    "issuer": "Udemy",
     "date": "2025",
-    "credential_url": "",
-    "image": "images/certifications/udemy_tf.jpg",
+    "credential_url": "https://www.udemy.com/certificate/UC-c753aa59-a63e-414e-9226-cd0a87d4b6d2/?utm_campaign=email&utm_medium=email&utm_source=sendgrid.com",
+    "image": "images/certifications/udemy.png",
     "icon": "fa-python",
     "description": "Completed hands-on deep learning bootcamp focused on building, training, and deploying neural networks using TensorFlow and Keras.",
     "tags": ["TensorFlow", "Deep Learning", "Neural Networks"]
   },
   {
     "id": "irb-research-behavioral",
-    "title": "IRB – Research in Behavioral Sciences",
-    "issuer": "Institutional Review Board (IRB)",
+    "title": "Responsible Conduct of Research",
+    "issuer": "CITI Program",
     "date": "2024",
-    "credential_url": "",
-    "image": "images/certifications/irb.png",
+    "credential_url": "https://www.citiprogram.org/verify/?w96e648ff-1c93-42fc-bbd1-7f89fc66b9ca-67084736",
+    "image": "images/certifications/citi.png",
     "icon": "fa-user-check",
     "description": "Completed IRB certification for conducting ethical research involving human participants in behavioral and social sciences.",
     "tags": ["IRB", "Ethics", "Research"]
@@ -499,8 +510,8 @@
     "title": "Deployment of Machine Learning Models",
     "issuer": "Udemy",
     "date": "2025",
-    "credential_url": "",
-    "image": "images/certifications/udemy_ml.jpg",
+    "credential_url": "https://www.udemy.com/certificate/UC-8c6e0df6-fa04-4f48-8dd3-6eb164914e49/",
+    "image": "images/certifications/udemy.png",
     "icon": "fa-python",
     "description": "Learned how to deploy ML models using Flask, Docker, and CI/CD pipelines, covering best practices in production-ready MLOps.",
     "tags": ["MLOps", "Deployment", "Docker"]

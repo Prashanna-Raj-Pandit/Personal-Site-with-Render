@@ -6,77 +6,85 @@
     <title>{{ data.name }} - Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#tableau-dashboards">Dashboards</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#tableau-dashboards">Dashboards</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-image">
-                    <div class="profile-wrapper">
-                        <img src="{{ url_for('static', filename=data.profile_image) }}" alt="{{ data.name }}" class="profile-img">
-                        <div class="profile-border"></div>
-                    </div>
-                </div>
-                <div class="hero-content">
-<!--                    <span class="greeting">&lt;hello_world/&gt;</span>-->
-                    <h1 class="hero-title">{{ data.name }}</h1>
-                    <h2 class="hero-subtitle">{{ data.title }}</h2>
-                    <p class="hero-tagline">{{ data.subtitle }}</p>
-                    <p class="hero-bio">{{ data.bio }}</p>
-
-                    <div class="hero-buttons">
-                        <a href="https://ictceel.khwopaconference.com/uploads/conferencepaper/fullpaper/1037.pdf" class="btn btn-primary">
-                            <i class="fas fa-file"></i>  Publication
-                        </a>
-                        <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank" class="btn btn-secondary">
-                            <i class="fas fa-file-pdf"></i>  Resume
-                        </a>
-                    </div>
-
-                    <div class="social-links">
-                        {% for social in data.social %}
-                        <a href="{{ social.url }}" target="_blank" class="social-icon">
-                            <i class="fab {{ social.icon }}"></i>
-                        </a>
-                        {% endfor %}
-                    </div>
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-image">
+                <div class="profile-wrapper">
+                    <img src="{{ url_for('static', filename=data.profile_image) }}" alt="{{ data.name }}"
+                         class="profile-img">
+                    <div class="profile-border"></div>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="hero-content">
+                <h1 class="hero-title">{{ data.name }}</h1>
+                <h2 class="hero-subtitle">{{ data.title }}</h2>
+                <p class="hero-tagline">{{ data.subtitle }}</p>
+                <p class="hero-bio">{{ data.bio }}</p>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>{{ data.about.intro }}</p>
-                <p>{{ data.about.description }}</p>
-                <p>{{ data.about.interests }}</p>
+                <div class="hero-buttons">
+                    <a href="https://ictceel.khwopaconference.com/uploads/conferencepaper/fullpaper/1037.pdf"
+                       class="btn btn-primary">
+                        <i class="fas fa-file"></i> Publication
+                    </a>
+                    <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-file-pdf"></i> Resume
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    {% for social in data.social %}
+                    <a href="{{ social.url }}" target="_blank" class="social-icon">
+                        <i class="fab {{ social.icon }}"></i>
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
+        </div>
+    </div>
+</section>
 
-            <div class="skills-showcase">
-                <h3 class="skills-showcase-title">Technical Skills</h3>
+
+
+
+<section id="about" class="section">
+    <div class="container">
+        <h3 class="section-title">About Me</h3>
+        <div class="about-content">
+            <p>{{ data.about.intro }}</p>
+            <p>{{ data.about.description }}</p>
+            <p>{{ data.about.interests }}</p>
+        </div>
+
+        <div class="skills-showcase">
+            <h2 class="skills-showcase-title">Technical Skills</h2>
+
+            <!-- Wrapper for 2-column layout -->
+            <div class="skills-categories-wrapper">
 
                 <div class="skills-category-simple">
                     <h4><i class="fas fa-code"></i> Programming Languages</h4>
@@ -86,7 +94,6 @@
                         <span class="skill-tag">SQL</span>
                         <span class="skill-tag">C</span>
                         <span class="skill-tag">C++</span>
-
                     </div>
                 </div>
 
@@ -120,13 +127,12 @@
                         <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">Bash</span>
                         <span class="skill-tag">Linux</span>
-
                         <span class="skill-tag">Mlflow</span>
                     </div>
                 </div>
 
-                                <div class="skills-category-simple">
-                    <h4><i class="fas fa-microchip"></i> Cloud Technologies</h4>
+                <div class="skills-category-simple">
+                    <h4><i class="fas fa-cloud"></i> Cloud Technologies</h4>
                     <div class="skills-tags">
                         <span class="skill-tag">S3</span>
                         <span class="skill-tag">EC2</span>
@@ -140,11 +146,10 @@
                         <span class="skill-tag">API Gateway</span>
                         <span class="skill-tag">SNS & SQS</span>
                     </div>
-
                 </div>
 
                 <div class="skills-category-simple">
-                    <h4><i class="fas fa-microchip"></i> Concepts</h4>
+                    <h4><i class="fas fa-brain"></i> Concepts</h4>
                     <div class="skills-tags">
                         <span class="skill-tag">Object Oriented Programming</span>
                         <span class="skill-tag">Machine Learning</span>
@@ -158,217 +163,318 @@
                         <span class="skill-tag">Cloud Services</span>
                     </div>
                 </div>
+                <div class="skills-category-simple">
+                    <h4><i class="fas fa-brain"></i> Soft skills</h4>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Collaboration</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Project management</span>
+                        <span class="skill-tag">Leadership</span>
 
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="section section-dark">
-        <div class="container-wide">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-grid">
-                {% for exp in data.experience %}
-                <div class="experience-card">
-                    <div class="exp-header">
-                        <div class="exp-title-group">
-                            <h3>{{ exp.position }}</h3>
-                            <span class="exp-date">{{ exp.duration }}</span>
-                        </div>
-                        <div class="exp-org-group">
-                            <h4>{{ exp.organization }}</h4>
-                            <span class="exp-location">{{ exp.location }}</span>
-                        </div>
                     </div>
-                    <p class="exp-description">{{ exp.description }}</p>
-                    {% if exp.responsibilities %}
-                    <ul class="exp-responsibilities">
-                        {% for resp in exp.responsibilities %}
-                        <li><i class="fas fa-chevron-right"></i> {{ resp }}</li>
+                </div>
+
+            </div> <!-- End skills-categories-wrapper -->
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="section section-dark">
+    <div class="container-wide">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-grid">
+            {% for exp in data.experience %}
+            {% set is_same_org = exp.get('same_org_as_next', False) %}
+            {% set is_continuing = loop.index > 1 and data.experience[loop.index - 2].get('same_org_as_next', False) %}
+            <div class="experience-card{% if is_same_org %} same-organization{% endif %}{% if is_continuing %} continuing-organization{% endif %}">
+                <div class="exp-layout">
+                    <!-- Organization Logo/Icon -->
+                    <div class="exp-logo">
+                        <i class="fas {{ exp.icon }}"></i>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="exp-main-content">
+                        <div class="exp-header">
+                            <div class="exp-title-row">
+                                <h3>{{ exp.position }}</h3>
+                                <span class="exp-date">{{ exp.duration }}</span>
+                            </div>
+                            <div class="exp-org-row">
+                                {% if not is_continuing %}
+                                <h4>{{ exp.organization }}</h4>
+                                <span class="separator">•</span>
+                                {% endif %}
+                                <span class="exp-location">{{ exp.location }}</span>
+                            </div>
+                        </div>
+
+                        <!-- One-line description (always visible) -->
+                        <p class="exp-description">{{ exp.description }}</p>
+
+                        <!-- Expandable Details -->
+                        {% if exp.responsibilities %}
+                        <div class="exp-details" id="exp-details-{{ loop.index }}">
+                            <ul class="exp-responsibilities">
+                                {% for resp in exp.responsibilities %}
+                                <li>{{ resp }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <!-- Toggle Button -->
+                        <button class="exp-toggle-btn" onclick="toggleExperience('exp-details-{{ loop.index }}', this)">
+                            <span>See more</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section id="certifications" class="section">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+
+    <div class="certifications-grid">
+      {% for cert in data.certifications %}
+      <div class="certification-card">
+        <div class="cert-image-wrapper">
+          <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">
+        </div>
+
+        <div class="cert-content">
+          <h3 class="cert-title">{{ cert.title }}</h3>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+
+          <div class="cert-meta-row">
+            <span class="cert-date">
+              <i class="fas fa-calendar"></i> {{ cert.date }}
+            </span>
+
+            {% if cert.credential_url %}
+            <a href="{{ cert.credential_url }}" target="_blank" class="cert-credential-btn">
+              <i class="fas fa-external-link-alt"></i> Credential
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="Computer Vision">ML/DL</button>
+            <button class="filter-btn" data-category="Computer Vision">Computer Vision</button>
+            <button class="filter-btn" data-category="Data Analysis">Data Analysis</button>
+            <button class="filter-btn" data-category="Web Development">Web Development</button>
+            <button class="filter-btn" data-category="Backend Development">Backend</button>
+        </div>
+        <div class="projects-grid">
+            {% for project in data.projects %}
+            <a href="{{ url_for('project_detail', project_id=project.id) }}" class="project-card"
+               data-category="{{ project.category }}">
+                <div class="project-image-wrapper">
+                    <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}">
+                    <div class="project-overlay">
+                        <p class="project-overlay-text">{{ project.short_description[:150] }}{% if
+                            project.short_description|length > 150 %}...{% endif %}</p>
+                    </div>
+                    <!-- GitHub Icon -->
+                    {% if project.github_url %}
+                    <a href="{{ project.github_url }}"
+                       target="_blank"
+                       class="project-github-link"
+                       aria-label="View source on GitHub"
+                       onclick="event.stopPropagation();">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    {% endif %}
+                </div>
+                <div class="project-content">
+                    <!--                        <span class="project-category">{{ project.category }}</span>-->
+                    <h4 class="project-title">{{ project.title }}</h4>
+                    <div class="project-tech">
+                        {% for tech in project.technologies[:3] %}
+                        <span class="tech-tag">{{ tech }}</span>
                         {% endfor %}
-                    </ul>
-                    {% endif %}
+                    </div>
                 </div>
-                {% endfor %}
-            </div>
+            </a>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-filters">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="Computer Vision">Computer Vision</button>
-                <button class="filter-btn" data-category="Data Analysis">Data Analysis</button>
-                <button class="filter-btn" data-category="Web Development">Web Development</button>
-                <button class="filter-btn" data-category="Backend Development">Backend</button>
-            </div>
-            <div class="projects-grid">
-                {% for project in data.projects %}
-                <a href="{{ url_for('project_detail', project_id=project.id) }}" class="project-card" data-category="{{ project.category }}">
-                    <div class="project-image-wrapper">
-                        <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}">
-                        <div class="project-overlay">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
+<section id="tableau-dashboards" class="section">
+    <div class="container">
+        <h2 class="section-title">Tableau Dashboards</h2>
+        <div class="tableau-grid">
+            {% for dashboard in data.tableau_dashboards %}
+            <div class="tableau-card" onclick="openLightbox('{{ dashboard.id }}')">
+                <div class="tableau-image-wrapper">
+                    <img src="{{ url_for('static', filename=dashboard.image) }}" alt="{{ dashboard.title }}">
+                    <div class="tableau-hover-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <p>Click to View</p>
                     </div>
-                    <div class="project-content">
-                        <span class="project-category">{{ project.category }}</span>
-                        <h3>{{ project.title }}</h3>
-                        <p>{{ project.short_description }}</p>
-                        <div class="project-tech">
-                            {% for tech in project.technologies[:3] %}
-                            <span class="tech-tag">{{ tech }}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </a>
-                {% endfor %}
+                </div>
+                <div class="tableau-content">
+                    <h3>{{ dashboard.title }}</h3>
+                    <p>{{ dashboard.description }}</p>
+                </div>
             </div>
-        </div>
-    </section>
 
-    <section id="tableau-dashboards" class="section">
-        <div class="container">
-            <h2 class="section-title">Tableau Dashboards</h2>
-            <div class="tableau-grid">
-                {% for dashboard in data.tableau_dashboards %}
-                <div class="tableau-card" onclick="openLightbox('{{ dashboard.id }}')">
-                    <div class="tableau-image-wrapper">
-                        <img src="{{ url_for('static', filename=dashboard.image) }}" alt="{{ dashboard.title }}">
-                        <div class="tableau-hover-overlay">
-                            <i class="fas fa-search-plus"></i>
-                            <p>Click to View</p>
-                        </div>
-                    </div>
-                    <div class="tableau-content">
+            <!-- Lightbox Modal -->
+            <div id="lightbox-{{ dashboard.id }}" class="lightbox-modal">
+                <span class="lightbox-close" onclick="closeLightbox('{{ dashboard.id }}')">&times;</span>
+                <div class="lightbox-content">
+                    <img src="{{ url_for('static', filename=dashboard.image) }}" alt="{{ dashboard.title }}">
+                    <div class="lightbox-footer">
                         <h3>{{ dashboard.title }}</h3>
-                        <p>{{ dashboard.description }}</p>
+                        <a href="{{ url_for('static', filename=dashboard.download_url) }}" download
+                           class="btn btn-primary lightbox-download">
+                            <i class="fas fa-download"></i> Get .twbx File
+                        </a>
                     </div>
                 </div>
-
-                <!-- Lightbox Modal -->
-                <div id="lightbox-{{ dashboard.id }}" class="lightbox-modal">
-                    <span class="lightbox-close" onclick="closeLightbox('{{ dashboard.id }}')">&times;</span>
-                    <div class="lightbox-content">
-                        <img src="{{ url_for('static', filename=dashboard.image) }}" alt="{{ dashboard.title }}">
-                        <div class="lightbox-footer">
-                            <h3>{{ dashboard.title }}</h3>
-                            <a href="{{ url_for('static', filename=dashboard.download_url) }}" download class="btn btn-primary lightbox-download">
-                                <i class="fas fa-download"></i> Get .twbx File
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="achievements" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
-            <div class="achievements-horizontal">
-                {% for achievement in data.achievements %}
-                <a href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}" class="achievement-card-horizontal">
-                    <div class="achievement-grid-layout">
-                        <div class="achievement-image-left">
-                            <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">
-                        </div>
-                        <div class="achievement-content-right">
-                            <div class="achievement-icon-h">
-                                <i class="fas {{ achievement.icon }}"></i>
-                            </div>
-                            <span class="achievement-type">{{ achievement.type }}</span>
-                            <h3>{{ achievement.title }}</h3>
-                            <p>{{ achievement.description }}</p>
-                            <div class="achievement-meta">
-                                <span class="achievement-venue"><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>
-                                <span class="achievement-date"><i class="fas fa-calendar"></i> {{ achievement.date }}</span>
-                            </div>
-                            <div class="achievement-arrow">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                        </div>
-                    </div>
+<section id="achievements" class="section section-dark">
+  <div class="container">
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="achievements-list">
+      {% for achievement in data.achievements %}
+      <a href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}"
+         class="achievement-row">
+
+        <div class="achievement-left">
+          <div class="achievement-icon">
+            <i class="fas {{ achievement.icon }}"></i>
+          </div>
+
+          <div class="achievement-text">
+            <div class="achievement-topline">
+              <span class="achievement-type">{{ achievement.type }}</span>
+              <span class="achievement-date"><i class="fas fa-calendar"></i> {{ achievement.date }}</span>
+            </div>
+
+            <h3 class="achievement-title">{{ achievement.title }}</h3>
+            <p class="achievement-desc">{{ achievement.description }}</p>
+
+            <div class="achievement-meta">
+              <span><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="achievement-right">
+          <div class="achievement-thumb">
+            <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">
+          </div>
+          <div class="achievement-open">
+            <span>Open</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!--<section id="achievements" class="section section-dark">-->
+<!--    <div class="container">-->
+<!--        <h2 class="section-title">Achievements</h2>-->
+<!--        <div class="achievements-horizontal">-->
+<!--            {% for achievement in data.achievements %}-->
+<!--            <a href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}"-->
+<!--               class="achievement-card-horizontal">-->
+<!--                <div class="achievement-grid-layout">-->
+<!--                    <div class="achievement-image-left">-->
+<!--                        <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">-->
+<!--                    </div>-->
+<!--                    <div class="achievement-content-right">-->
+<!--                        <div class="achievement-icon-h">-->
+<!--                            <i class="fas {{ achievement.icon }}"></i>-->
+<!--                        </div>-->
+<!--                        <span class="achievement-type">{{ achievement.type }}</span>-->
+<!--                        <h3>{{ achievement.title }}</h3>-->
+<!--                        <p>{{ achievement.description }}</p>-->
+<!--                        <div class="achievement-meta">-->
+<!--                            <span class="achievement-venue"><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>-->
+<!--                            <span class="achievement-date"><i class="fas fa-calendar"></i> {{ achievement.date }}</span>-->
+<!--                        </div>-->
+<!--                        <div class="achievement-arrow">-->
+<!--                            <i class="fas fa-arrow-right"></i>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+
+<section id="contact" class="section section-dark">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+            <p class="contact-text">I'm always open to discussing research opportunities, collaborations, or exciting
+                projects. Feel free to reach out!</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>{{ data.location }}</p>
+                </div>
+            </div>
+
+            <div class="social-links-large">
+                {% for social in data.social %}
+                <a href="{{ social.url }}" target="_blank" class="social-btn">
+                    <i class="fab {{ social.icon }}"></i>
+                    <span>{{ social.name }}</span>
                 </a>
                 {% endfor %}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-columns">
-                {% for cert in data.certifications %}
-                <div class="certification-card-column">
-                    <div class="cert-image-wrapper">
-                        <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">
-                    </div>
-                    <div class="cert-icon-column">
-                        <i class="fab {{ cert.icon }}"></i>
-                    </div>
-                    <div class="cert-content-column">
-                        <h3>{{ cert.title }}</h3>
-                        <p class="cert-issuer-column">{{ cert.issuer }}</p>
-                        <p class="cert-description">{{ cert.description }}</p>
-                        <span class="cert-date-column"><i class="fas fa-calendar"></i> {{ cert.date }}</span>
-                    </div>
-                    {% if cert.url %}
-                    <a href="{{ cert.url }}" target="_blank" class="cert-view-btn">
-                        <i class="fas fa-external-link-alt"></i> View Certificate
-                    </a>
-                    {% endif %}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 {{ data.name }}. All rights reserved.</p>
+        <p class="footer-code">&lt;/Engineer&gt;</p>
+    </div>
+</footer>
 
-    <section id="contact" class="section section-dark">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <p class="contact-text">I'm always open to discussing research opportunities, collaborations, or exciting projects. Feel free to reach out!</p>
-
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <a href="mailto:{{ data.email }}">{{ data.email }}</a>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Location</h3>
-                        <p>{{ data.location }}</p>
-                    </div>
-<!--                    <div class="contact-card">-->
-<!--                        <i class="fas fa-phone"></i>-->
-<!--                        <h3>Phone</h3>-->
-<!--                        <p>{{ data.phone }}</p>-->
-<!--                    </div>-->
-                </div>
-
-                <div class="social-links-large">
-                    {% for social in data.social %}
-                    <a href="{{ social.url }}" target="_blank" class="social-btn">
-                        <i class="fab {{ social.icon }}"></i>
-                        <span>{{ social.name }}</span>
-                    </a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 {{ data.name }}. All rights reserved.</p>
-            <p class="footer-code">&lt;/Engineer&gt;</p>
-        </div>
-    </footer>
-
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

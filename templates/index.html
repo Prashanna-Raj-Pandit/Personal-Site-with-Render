@@ -68,6 +68,9 @@
     </div>
 </section>
 
+
+
+
 <section id="about" class="section">
     <div class="container">
         <h3 class="section-title">About Me</h3>
@@ -233,6 +236,43 @@
     </div>
 </section>
 
+<!-- =========================
+     Certifications (HTML)
+     ========================= -->
+<section id="certifications" class="section">
+  <div class="container">
+    <h2 class="section-title">Certifications</h2>
+
+    <div class="certifications-grid">
+      {% for cert in data.certifications %}
+      <div class="certification-card">
+        <div class="cert-image-wrapper">
+          <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">
+        </div>
+
+        <div class="cert-content">
+          <h3 class="cert-title">{{ cert.title }}</h3>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+
+          <div class="cert-meta-row">
+            <span class="cert-date">
+              <i class="fas fa-calendar"></i> {{ cert.date }}
+            </span>
+
+            {% if cert.credential_url %}
+            <a href="{{ cert.credential_url }}" target="_blank" class="cert-credential-btn">
+              <i class="fas fa-external-link-alt"></i> Credential
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
 <section id="projects" class="section">
     <div class="container">
         <h2 class="section-title">Projects</h2>
@@ -351,30 +391,6 @@
     </div>
 </section>
 
-<section id="certifications" class="section">
-    <div class="container">
-        <h2 class="section-title">Certifications</h2>
-        <div class="certifications-grid">
-            {% for cert in data.certifications %}
-            <div class="certification-card-column">
-                <div class="cert-image-wrapper">
-                    <img src="{{ url_for('static', filename=cert.image) }}" alt="{{ cert.title }}">
-                </div>
-                <div class="cert-content-column">
-                    <h3>{{ cert.title }}</h3>
-                    <p class="cert-issuer-column">{{ cert.issuer }}</p>
-                    <span class="cert-date-column"><i class="fas fa-calendar"></i> {{ cert.date }}</span>
-                </div>
-                {% if cert.credential_url %}
-                <a href="{{ cert.credential_url }}" target="_blank" class="cert-view-btn">
-                    <i class="fas fa-external-link-alt"></i> Credential
-                </a>
-                {% endif %}
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
 
 <section id="contact" class="section section-dark">
     <div class="container">

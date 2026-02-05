@@ -81,7 +81,7 @@
         </div>
 
         <div class="skills-showcase">
-            <h3 class="skills-showcase-title">Technical Skills</h3>
+            <h2 class="skills-showcase-title">Technical Skills</h2>
 
             <!-- Wrapper for 2-column layout -->
             <div class="skills-categories-wrapper">
@@ -236,9 +236,7 @@
     </div>
 </section>
 
-<!-- =========================
-     Certifications (HTML)
-     ========================= -->
+
 <section id="certifications" class="section">
   <div class="container">
     <h2 class="section-title">Certifications</h2>
@@ -359,37 +357,83 @@
 </section>
 
 <section id="achievements" class="section section-dark">
-    <div class="container">
-        <h2 class="section-title">Achievements</h2>
-        <div class="achievements-horizontal">
-            {% for achievement in data.achievements %}
-            <a href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}"
-               class="achievement-card-horizontal">
-                <div class="achievement-grid-layout">
-                    <div class="achievement-image-left">
-                        <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">
-                    </div>
-                    <div class="achievement-content-right">
-                        <div class="achievement-icon-h">
-                            <i class="fas {{ achievement.icon }}"></i>
-                        </div>
-                        <span class="achievement-type">{{ achievement.type }}</span>
-                        <h3>{{ achievement.title }}</h3>
-                        <p>{{ achievement.description }}</p>
-                        <div class="achievement-meta">
-                            <span class="achievement-venue"><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>
-                            <span class="achievement-date"><i class="fas fa-calendar"></i> {{ achievement.date }}</span>
-                        </div>
-                        <div class="achievement-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
+  <div class="container">
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="achievements-list">
+      {% for achievement in data.achievements %}
+      <a href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}"
+         class="achievement-row">
+
+        <div class="achievement-left">
+          <div class="achievement-icon">
+            <i class="fas {{ achievement.icon }}"></i>
+          </div>
+
+          <div class="achievement-text">
+            <div class="achievement-topline">
+              <span class="achievement-type">{{ achievement.type }}</span>
+              <span class="achievement-date"><i class="fas fa-calendar"></i> {{ achievement.date }}</span>
+            </div>
+
+            <h3 class="achievement-title">{{ achievement.title }}</h3>
+            <p class="achievement-desc">{{ achievement.description }}</p>
+
+            <div class="achievement-meta">
+              <span><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>
+            </div>
+          </div>
         </div>
+
+        <div class="achievement-right">
+          <div class="achievement-thumb">
+            <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">
+          </div>
+          <div class="achievement-open">
+            <span>Open</span>
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+
+      </a>
+      {% endfor %}
     </div>
+  </div>
 </section>
+
+
+<!--<section id="achievements" class="section section-dark">-->
+<!--    <div class="container">-->
+<!--        <h2 class="section-title">Achievements</h2>-->
+<!--        <div class="achievements-horizontal">-->
+<!--            {% for achievement in data.achievements %}-->
+<!--            <a href="{{ url_for('achievement_detail', achievement_id=achievement.id) }}"-->
+<!--               class="achievement-card-horizontal">-->
+<!--                <div class="achievement-grid-layout">-->
+<!--                    <div class="achievement-image-left">-->
+<!--                        <img src="{{ url_for('static', filename=achievement.image) }}" alt="{{ achievement.title }}">-->
+<!--                    </div>-->
+<!--                    <div class="achievement-content-right">-->
+<!--                        <div class="achievement-icon-h">-->
+<!--                            <i class="fas {{ achievement.icon }}"></i>-->
+<!--                        </div>-->
+<!--                        <span class="achievement-type">{{ achievement.type }}</span>-->
+<!--                        <h3>{{ achievement.title }}</h3>-->
+<!--                        <p>{{ achievement.description }}</p>-->
+<!--                        <div class="achievement-meta">-->
+<!--                            <span class="achievement-venue"><i class="fas fa-map-marker-alt"></i> {{ achievement.venue }}</span>-->
+<!--                            <span class="achievement-date"><i class="fas fa-calendar"></i> {{ achievement.date }}</span>-->
+<!--                        </div>-->
+<!--                        <div class="achievement-arrow">-->
+<!--                            <i class="fas fa-arrow-right"></i>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 
 <section id="contact" class="section section-dark">

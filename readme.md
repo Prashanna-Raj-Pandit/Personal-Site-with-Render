@@ -12,7 +12,7 @@
     <br />
     <a href="https://prashanna.vercel.app/"><strong>https://prashanna.vercel.app/</strong></a>
     <br />
-    <a href="https://prashanna.vercel.app/"><strong>https://prashanna.vercel.app/</strong></a>
+    <a href="https://prashannaraj.com.np/"><strong>https://prashannaraj.com.np/</strong></a>
     <br />
     <br />
   </p>

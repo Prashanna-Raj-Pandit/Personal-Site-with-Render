@@ -100,10 +100,22 @@
   ],
 
   "achievements": [
+      {
+    "id": "ehacks",
+    "title": "3rd Place Winner - eHacks Hackathon 2026",
+    "type": "Hackathon",
+    "description": "Competed in a high-intensity, 36-hour sprint to build a functional, production-ready AI solution. Our team, \"Everest,\" developed EvidenceCV, a RAG-powered engine designed to reduce AI hallucinations in career documents by grounding resume generation in verified evidence from GitHub, research papers, certificates, and other documents which can reduce the users time by 50% + in resume generation. Secured a podium finish (3rd Place) based on technical complexity, innovation, and real-world utility.\n\n",
+    "venue": "T-REX Downtown STL",
+    "date": "Mar 2026",
+    "icon": "fa-trophy",
+    "details": "Competed in a high-intensity, 36-hour sprint to build a functional, production-ready AI solution. Our team, \"Everest,\" developed EvidenceCV, a RAG-powered engine designed to reduce AI hallucinations in career documents by grounding resume generation in verified evidence from GitHub, research papers, certificates, and other documents which can reduce the users time by 50% + in resume generation. Secured a podium finish (3rd Place) based on technical complexity, innovation, and real-world utility.\n\n",
+    "url": "https://devpost.com/Prashanna-Raj-Pandit?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav",
+    "image": "images/achievements/ehacksimage.jpg"
+  },
   {
     "id": "all-nepal-hackathon-2023",
     "title": "Winner – All Nepal Hackathon 2023",
-    "type": "Competition",
+    "type": "Hackathon",
     "description": "Led Vision Architects to victory in the e-Governance category at the All Nepal Hackathon 2023.",
     "venue": "All Nepal Hackathon 2023",
     "date": "2023",
@@ -152,9 +164,28 @@
 
   "projects": [
     {
+  "id": "evidence-cv",
+  "title": "EvidenceCV: RAG-Powered Resume Engine",
+  "category": "ML/DL",
+  "short_description": "An evidence-based AI system using RAG to generate ATS-optimized resumes from GitHub and research data.",
+  "description": "Architected an end-to-end Retrieval-Augmented Generation (RAG) pipeline to eliminate AI hallucinations by grounding resume generation in verified evidence. Engineered a multi-source ingestion system for GitHub APIs and PDFs, implemented semantic retrieval via ChromaDB.",
+  "image": "images/evidencecv.png",
+  "technologies": ["Python", "FastAPI", "ChromaDB"],
+  "features": [
+    "Multi-source ingestion (GitHub, PDF, Research Papers)",
+    "Semantic retrieval with HNSW indexing",
+    "Automated LaTeX resume rendering",
+    "Hosted portfolio website for user"
+  ],
+  "github": "https://github.com/Prashanna-Raj-Pandit/EvidenceCV",
+  "demo": "https://github.com/Prashanna-Raj-Pandit/EvidenceCV",
+  "date": "2026",
+  "award": "3rd Place Winner @ eHacks Hackathon"
+},
+    {
     "id": "igait",
     "title": "iGAIT: Gait Analysis and AI-Based Motion Understanding",
-    "category": "Deep Learning / Computer Vision",
+    "category": "ML/DL",
     "short_description": "AI-based gait analysis using deep learning and signal processing for motion understanding.",
     "description": "Developed a gait analysis system using OpenPose for 2D keypoint extraction from 106 videos, processed data with NumPy and Pandas to compute kinematic features such as stride length, cadence, and joint angles. Built logistic regression and deep learning models (80K parameters) achieving 72% and 88% accuracy, respectively.",
     "image": "images/igait.png",
@@ -172,7 +203,7 @@
     {
     "id": "music-generation-rnn",
     "title": "Music Generation using RNN (Let's Dance!)",
-    "category": "Deep Learning / Sequence Modeling",
+    "category": "ML/DL",
     "short_description": "Character-level music generation using LSTM-based RNNs trained on symbolic music data.",
     "description": "Implemented an LSTM-based recurrent neural network to generate symbolic music in ABC notation. Used PyTorch to train embeddings, LSTM layers, and softmax output to predict sequential notes. Demonstrated temporal dependency learning and sequence prediction accuracy through iterative sampling.",
     "image": "images/music-generation.png",
@@ -190,7 +221,7 @@
     {
     "id": "debiasing-facial-detection",
     "title": "Debiasing Facial Detection Systems",
-    "category": "AI Ethics / Computer Vision",
+    "category": "ML/DL",
     "short_description": "Implemented CNNs and DB-VAE for bias mitigation in facial detection systems.",
     "description": "Developed CNN architectures for facial detection and integrated a Debiasing Variational Autoencoder (DB-VAE) to reweight training samples. Improved fairness by increasing sampling for underrepresented facial features, reducing demographic bias in model predictions.",
     "image": "images/dbvae.png",
@@ -208,7 +239,7 @@
     {
     "id": "reinforcement-learning",
     "title": "Advanced AI Project: Reinforcement Learning",
-    "category": "AI / Reinforcement Learning",
+    "category": "ML/DL",
     "short_description": "Implemented Q-learning and Value Iteration agents for policy optimization and exploration.",
     "description": "Implemented Value Iteration and Q-learning agents for policy optimization tasks. Experimented with discount factors, noise, and living rewards to analyze agent behavior in environments such as Pacman and bridge crossing. Developed Epsilon-Greedy exploration and Approximate Q-learning for scalability.",
     "image": "images/pacman.png",
@@ -226,7 +257,7 @@
     {
     "id": "mednlpify",
     "title": "MedNLPify: Deep Learning for Biomedical Text Classification",
-    "category": "NLP / Deep Learning",
+    "category": "ML/DL",
     "short_description": "NLP system for sentence classification in biomedical abstracts using hybrid embeddings.",
     "description": "Developed deep learning models with token, character, and hybrid embeddings for classifying 200k PubMed RCT abstracts. Achieved 85.6% accuracy using a Tribrid model and deployed as a Flask web app and Chrome extension for biomedical text classification.",
     "image": "images/mednlpfy.png",
@@ -262,7 +293,7 @@
 {
     "id": "exfs2",
     "title": "ExFS2: User-Space Virtual File System",
-    "category": "Systems Programming / File Systems",
+    "category": "Backend",
     "short_description": "Implemented an inode-based virtual file system supporting direct and indirect addressing.",
     "description": "Built ExFS2, a user-space virtual file system emulating inode-based storage using C. Supported file creation, deletion, nested directories, and direct/single/double indirect block addressing. Designed bitmap-based allocation and implemented efficient space reuse and scalability.",
     "image": "images/exfs2.png",
@@ -297,7 +328,7 @@
   },
     {
     "id": "user-level-threading",
-    "title": "User-Level Threading and Scheduling",
+    "title": "Other",
     "category": "Operating Systems",
     "short_description": "Implemented many-to-one user-level threading with Round Robin and Lottery schedulers.",
     "description": "Developed a user-level threading library using ucontext for manual context switching and scheduling. Implemented Round Robin and Lottery schedulers, simulated preemption, yielding, and fairness experiments based on Waldspurger’s Lottery Scheduling paper.",
@@ -462,6 +493,17 @@
 
   "certifications": [
       {
+    "id": "machine learning associate",
+    "title": "AWS Certified Machine Learning Engineer – Associate",
+    "issuer": "AWS",
+    "date": "Mar 2026",
+    "credential_url": "https://www.credly.com/badges/aac71bbf-df98-4047-b36d-80b7c4208a15/public_url",
+    "image": "images/certifications/aws.png",
+    "icon": "fa-robot",
+    "description": "",
+    "tags": ["SageMaker","Bedrock","MLOps"]
+  },
+      {
     "id": "cloud-practitioner",
     "title": "AWS Cloud Practitioner",
     "issuer": "AWS",
@@ -470,7 +512,7 @@
     "image": "images/certifications/aws.png",
     "icon": "fa-python",
     "description": "",
-    "tags": ["Python", "Programming", "Projects"]
+    "tags": ["AWS", "cloud computing", "lambda", "ec2"]
   },
   {
     "id": "tensorflow-bootcamp",
@@ -516,17 +558,6 @@
     "icon": "fa-python",
     "description": "Completed a 100-day intensive Python bootcamp covering core programming, OOP, APIs, web development, and automation projects.",
     "tags": ["Python", "Programming", "Projects"]
-  },
-  {
-    "id": "agentic-ai-bootcamp",
-    "title": "Agentic AI Bootcamp",
-    "issuer": "Udemy",
-    "date": "2026",
-    "credential_url": "",
-    "image": "images/bg.jpg",
-    "icon": "fa-robot",
-    "description": "Explored building agentic AI systems including planning agents, tool use, and autonomous workflows using modern LLM frameworks.",
-    "tags": ["AI Agents", "Autonomy", "LLM"]
   }
 ]
 

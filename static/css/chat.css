@@ -1,0 +1,594 @@
+/* ============================================================
+   RAG CHAT WIDGET — chat.css
+   Matches portfolio design: #0b1220 bg, purple/cyan accent,
+   Fira Code monospace, glassmorphism cards
+   ============================================================ */
+
+/* ── Floating trigger button ── */
+#rag-trigger {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, rgba(124,92,255,1), rgba(39,195,255,1));
+    box-shadow: 0 8px 32px rgba(124,92,255,0.45), 0 0 0 0 rgba(124,92,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: trigger-pulse 3s ease-in-out infinite;
+}
+
+#rag-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(124,92,255,0.6), 0 0 0 8px rgba(124,92,255,0.1);
+    animation: none;
+}
+
+#rag-trigger svg {
+    width: 26px;
+    height: 26px;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+#rag-trigger.open svg.icon-chat   { display: none; }
+#rag-trigger.open svg.icon-close  { display: block !important; }
+#rag-trigger svg.icon-close       { display: none; }
+
+@keyframes trigger-pulse {
+    0%,100% { box-shadow: 0 8px 32px rgba(124,92,255,.45), 0 0 0 0 rgba(124,92,255,.3); }
+    50%      { box-shadow: 0 8px 32px rgba(124,92,255,.45), 0 0 0 10px rgba(124,92,255,0); }
+}
+
+/* ── Tooltip on trigger ── */
+#rag-trigger::before {
+    content: 'Ask me anything';
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(11,18,32,0.95);
+    color: rgba(255,255,255,0.85);
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 7px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(124,92,255,0.3);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+#rag-trigger:hover::before { opacity: 1; }
+
+/* ── Main widget container ── */
+#rag-widget {
+    position: fixed;
+    bottom: 108px;
+    right: 32px;
+    z-index: 8999;
+    width: 420px;
+    max-height: 680px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(11,18,32,0.97);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(124,92,255,0.12);
+    overflow: hidden;
+    transform: translateY(16px) scale(0.97);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1),
+                opacity 0.35s cubic-bezier(0.4,0,0.2,1);
+    backdrop-filter: blur(20px);
+}
+
+#rag-widget::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(124,92,255,1), rgba(39,195,255,1));
+}
+
+#rag-widget.open {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ── Header ── */
+#rag-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.03);
+}
+
+.rag-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rag-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(124,92,255,0.3), rgba(39,195,255,0.3));
+    border: 1px solid rgba(124,92,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.rag-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 2px solid rgba(11,18,32,0.97);
+    box-shadow: 0 0 6px rgba(34,197,94,0.6);
+}
+
+.rag-title {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.2;
+}
+
+.rag-subtitle {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.rag-header-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Mode toggle */
+.rag-mode-toggle {
+    display: flex;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 3px;
+    gap: 2px;
+}
+
+.rag-mode-btn {
+    width: 30px;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.rag-mode-btn svg { width: 14px; height: 14px; }
+.rag-mode-btn:hover { color: rgba(255,255,255,0.7); }
+.rag-mode-btn.active {
+    background: linear-gradient(135deg, rgba(124,92,255,0.4), rgba(39,195,255,0.4));
+    color: #fff;
+}
+
+/* ── Mode panels ── */
+#rag-body { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+/* TEXT CHAT */
+#rag-chat-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#rag-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(124,92,255,0.3) transparent;
+}
+#rag-messages::-webkit-scrollbar { width: 3px; }
+#rag-messages::-webkit-scrollbar-thumb { background: rgba(124,92,255,0.3); border-radius: 2px; }
+
+/* suggestion chips */
+.rag-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 16px 14px;
+    flex-shrink: 0;
+}
+
+.rag-chip {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(124,92,255,0.35);
+    background: rgba(124,92,255,0.08);
+    color: rgba(255,255,255,0.65);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+.rag-chip:hover {
+    background: rgba(124,92,255,0.2);
+    border-color: rgba(124,92,255,0.6);
+    color: rgba(255,255,255,0.9);
+}
+
+/* messages */
+.rag-msg {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: msg-in 0.3s ease;
+}
+@keyframes msg-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.rag-msg.user  { align-items: flex-end; }
+.rag-msg.bot   { align-items: flex-start; }
+
+.rag-msg-who {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    padding: 0 4px;
+}
+
+.rag-msg-bubble {
+    max-width: 86%;
+    padding: 11px 15px;
+    border-radius: 12px;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.rag-msg.user .rag-msg-bubble {
+    background: linear-gradient(135deg, rgba(124,92,255,0.25), rgba(39,195,255,0.2));
+    border: 1px solid rgba(124,92,255,0.3);
+    border-bottom-right-radius: 3px;
+    color: rgba(255,255,255,0.9);
+}
+
+.rag-msg.bot .rag-msg-bubble {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-bottom-left-radius: 3px;
+    color: rgba(255,255,255,0.85);
+}
+
+/* typing indicator */
+.rag-typing {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    border-bottom-left-radius: 3px;
+    width: fit-content;
+}
+.rag-typing span {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(124,92,255,1), rgba(39,195,255,1));
+    animation: rag-dot 1.1s ease-in-out infinite;
+}
+.rag-typing span:nth-child(2) { animation-delay: .18s; }
+.rag-typing span:nth-child(3) { animation-delay: .36s; }
+@keyframes rag-dot {
+    0%,60%,100% { transform: translateY(0); opacity: 0.3; }
+    30%          { transform: translateY(-6px); opacity: 1; }
+}
+
+/* input area */
+#rag-input-area {
+    padding: 12px 16px 14px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+}
+
+#rag-input-wrap {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 9px 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+#rag-input-wrap:focus-within {
+    border-color: rgba(124,92,255,0.5);
+    box-shadow: 0 0 0 3px rgba(124,92,255,0.08);
+}
+
+#rag-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgba(255,255,255,0.9);
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    resize: none;
+    max-height: 100px;
+    scrollbar-width: none;
+    caret-color: rgba(124,92,255,1);
+}
+#rag-input::placeholder { color: rgba(255,255,255,0.25); }
+
+#rag-send {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, rgba(124,92,255,1), rgba(39,195,255,1));
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(124,92,255,0.4);
+}
+#rag-send:hover { transform: scale(1.06); box-shadow: 0 6px 20px rgba(124,92,255,0.55); }
+#rag-send svg { width: 14px; height: 14px; }
+
+/* ── VOICE PANEL ── */
+#rag-voice-panel {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 32px 24px;
+    gap: 20px;
+    min-height: 340px;
+}
+#rag-voice-panel.active { display: flex; }
+#rag-chat-panel.hidden   { display: none; }
+
+/* voice orb */
+.rag-voice-orb {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 35%,
+        rgba(124,92,255,0.3) 0%,
+        rgba(39,195,255,0.2) 50%,
+        rgba(124,92,255,0.05) 100%);
+    border: 1px solid rgba(124,92,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    box-shadow: 0 0 40px rgba(124,92,255,0.15);
+}
+.rag-voice-orb::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 1px solid rgba(124,92,255,0.15);
+    animation: orb-ring 3s ease-in-out infinite;
+}
+.rag-voice-orb::after {
+    content: '';
+    position: absolute;
+    inset: -22px;
+    border-radius: 50%;
+    border: 1px solid rgba(39,195,255,0.08);
+    animation: orb-ring 3s ease-in-out infinite 0.6s;
+}
+@keyframes orb-ring {
+    0%,100% { transform: scale(1); opacity: 0.6; }
+    50%      { transform: scale(1.05); opacity: 1; }
+}
+
+.rag-voice-orb:hover {
+    box-shadow: 0 0 60px rgba(124,92,255,0.35);
+    border-color: rgba(124,92,255,0.6);
+}
+
+.rag-voice-orb.listening {
+    border-color: rgba(39,195,255,0.7);
+    box-shadow: 0 0 60px rgba(39,195,255,0.3), 0 0 120px rgba(39,195,255,0.1);
+    animation: listen-pulse 1s ease-in-out infinite;
+}
+@keyframes listen-pulse {
+    0%,100% { transform: scale(1); }
+    50%      { transform: scale(1.05); }
+}
+
+.rag-voice-orb svg {
+    width: 38px;
+    height: 38px;
+    color: rgba(255,255,255,0.8);
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+}
+.rag-voice-orb.listening svg { color: rgba(39,195,255,1); }
+
+.rag-voice-hint {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+}
+
+.rag-voice-transcript {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    min-height: 20px;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.rag-voice-answer {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 1.75;
+    max-height: 120px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    max-width: 340px;
+}
+
+/* ── Evidence strip ── */
+#rag-evidence {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 10px 16px;
+    flex-shrink: 0;
+    max-height: 110px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    display: none;
+}
+#rag-evidence.has-items { display: block; }
+
+.rag-ev-label {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.2);
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.rag-ev-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 10px;
+}
+.rag-ev-item:last-child { border-bottom: none; }
+
+.rag-ev-score {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 8px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: rgba(124,92,255,0.12);
+    color: rgba(124,92,255,0.9);
+    flex-shrink: 0;
+    min-width: 30px;
+    text-align: center;
+}
+.rag-ev-text {
+    color: rgba(255,255,255,0.35);
+    font-size: 10px;
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.rag-ev-src {
+    font-size: 8px;
+    color: rgba(39,195,255,0.4);
+    font-family: 'Fira Code', monospace;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* ── Processing bar ── */
+#rag-proc-bar {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(124,92,255,1),
+        rgba(39,195,255,1),
+        rgba(124,92,255,1),
+        transparent);
+    background-size: 300% 100%;
+    animation: proc-sweep 1.2s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+    flex-shrink: 0;
+}
+#rag-proc-bar.on { opacity: 1; }
+@keyframes proc-sweep {
+    0%   { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+/* ── Error state ── */
+.rag-error {
+    color: rgba(255,100,100,0.8);
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    #rag-widget {
+        right: 12px;
+        left: 12px;
+        width: auto;
+        bottom: 96px;
+    }
+    #rag-trigger {
+        right: 20px;
+        bottom: 24px;
+    }
+}

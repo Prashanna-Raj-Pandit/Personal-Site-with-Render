@@ -164,6 +164,27 @@
 
   "projects": [
     {
+  "id": "docuchat",
+  "title": "DocuChat: Voice + Text RAG Chatbot",
+  "category": "ML/DL",
+  "short_description": "A production-grade Retrieval-Augmented Generation (RAG) chatbot with multi-query retrieval, evidence grounding, and voice interaction.",
+  "description": "Designed and implemented an end-to-end Retrieval-Augmented Generation (RAG) system that enables grounded, evidence-backed question answering over unstructured documents. Built a multi-stage pipeline including document ingestion, chunking, embedding generation, and semantic retrieval using ChromaDB. Integrated a multi-query retrieval strategy leveraging chat history with deduplication and dynamic ranking of chunks. Developed a FastAPI backend with a modular architecture and added real-time voice interaction using local Whisper for speech-to-text.",
+  "image": "images/recent_work/docuchat.gif",
+  "technologies": ["Python", "FastAPI", "ChromaDB", "LLM", "Whisper"],
+  "features": [
+    "Multi-query retrieval using conversation history",
+    "Deduplication of retrieved chunks across queries",
+    "Dynamic top-k retrieval and ranking",
+    "Evidence-backed answer generation using RAG",
+    "Voice + text interface with local speech-to-text (Whisper)",
+    "Modular pipeline (ingestion, indexing, retrieval, generation)"
+  ],
+  "github": "https://github.com/Prashanna-Raj-Pandit/DocuChat",
+  "demo": "https://github.com/Prashanna-Raj-Pandit/DocuChat",
+  "date": "2026",
+  "award": ""
+},
+    {
   "id": "evidence-cv",
   "title": "EvidenceCV: RAG-Powered Resume Engine",
   "category": "ML/DL",

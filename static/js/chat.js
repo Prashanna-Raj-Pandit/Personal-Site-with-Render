@@ -339,15 +339,23 @@
                 headers: { 'Content-Type': 'application/json' },
                 body:    JSON.stringify({ message: text })
             });
+            if (!res.ok) {
+                removeTyping();
+                if (res.status === 504) {
+                    addMessage('bot', '⏱ The response took too long. Please try again — it should be faster now that the server is warm.');
+                } else {
+                    addMessage('bot', `⚠ Server error (${res.status}). Please try again.`);
+                }
+                setProc(false);
+                return;
+            }
             const data = await res.json();
             removeTyping();
             addMessage('bot', data.answer || 'Sorry, I could not find an answer.');
             if (data.evidence) renderEvidence(data.evidence);
         } catch {
             removeTyping();
-            addMessage('bot',
-                '⚠ Could not reach the server. Make sure the FastAPI backend is running.'
-            );
+            addMessage('bot', '⚠ Could not reach the server. Please try again in a moment.');
         }
 
         setProc(false);
@@ -413,6 +421,14 @@
                     headers: { 'Content-Type': 'application/json' },
                     body:    JSON.stringify({ message: text })
                 });
+                if (!cRes.ok) {
+                    voiceHint.textContent = cRes.status === 504 ? 'TIMEOUT — TRY AGAIN' : 'SERVER ERROR — TRY AGAIN';
+                    voiceAnswer.textContent = cRes.status === 504
+                        ? '⏱ Took too long. Try again — server should be warmer now.'
+                        : `⚠ Server error (${cRes.status}).`;
+                    setProc(false);
+                    return;
+                }
                 const cData = await cRes.json();
                 const answer = cData.answer || 'I could not find an answer.';
 

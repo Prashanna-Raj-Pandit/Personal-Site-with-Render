@@ -128,9 +128,9 @@ class RetrievalChatCLI:
     def communicate_api(self, message: str) -> (str, int):
         user_input = message.strip()
         self.state.add_query(user_input)
-        queries = self.state.get_queries_for_retrieval()
-        top_k_per_query = self._dynamix_top_k_per_query()
-        final_top_k = self._dynamic_final_top_k()
+        queries = self.state.get_queries_for_retrieval()[:2]  # limit to 2 queries for web API latency
+        top_k_per_query = 5
+        final_top_k = 5
         self._print_queries_used(queries=queries,
                                  top_k_per_query=top_k_per_query,
                                  final_top_k=final_top_k)

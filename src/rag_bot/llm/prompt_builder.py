@@ -27,7 +27,7 @@ source_type:{source_type}
 Document title: {document_title}
 Page: {page}
 Path: {path}
-content: {item.text}
+content: {item.text[:300]}
 """.strip()
             blocks.append(block)
 

@@ -13,14 +13,15 @@ class CohereClient:
         self.client = cohere.ClientV2(api_key=config.cohere_api_key)
         self.model_name = config.cohere_model
 
-    def generate_text(self, prompt: str, temperature: float = 0.2) -> str:
+    def generate_text(self, prompt: str, temperature: float = 0.2, max_tokens: int = 250) -> str:
         response = self.client.chat(
             model=self.model_name,
             messages=[{
                 "role": "user",
                 "content": prompt,
             }],
-            temperature=temperature
+            temperature=temperature,
+            max_tokens=max_tokens,
         )
         text = self._extract_text(response)
         return text.strip()

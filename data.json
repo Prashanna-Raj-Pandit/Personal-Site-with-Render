@@ -6,7 +6,7 @@
   "phone": "+1 (XXX) XXX-XXXX",
   "location": "Edwardsville, Illinois",
   "profile_image": "images/profile.png",
-  "bio": "Graduate Research Assistant at Southern Illinois University Edwardsville specializing in Data Analytics, ML, Computer Vision, and Deep learning. Passionate about leveraging AI for automation, pattern recognition, and solving real-world problems.",
+  "bio": "Graduate Research Assistant at Southern Illinois University Edwardsville specializing in Data Analytics, ML, Statistical Modeling, and Deep learning. Passionate about leveraging AI for automation, pattern recognition, and solving real-world problems.",
   
   "social": [
     {
@@ -71,6 +71,22 @@
 
     ],
     "icon": "fa-university"
+  },
+  {
+    "position": "Machine Learning Engineer",
+    "organization": "Vrit Technologies",
+    "duration": "Jan 2023 – Jul 2024",
+    "location": "Kathmandu, Nepal",
+    "description": "",
+    "responsibilities": [
+
+  "Built and shipped end-to-end ML pipelines in production - data ingestion, feature engineering, model training, and REST API deployment on AWS - cutting release time by 40% through CI/CD automation (GitHub Actions, Docker)",
+      "Engineered automated ETL pipelines from multiple heterogeneous data sources with SQL-driven transformations, reducing manual data processing time by 60% and enabling real-time analytics",
+      "Deployed ML models as production-grade REST APIs using Python and Flask, enabling real-time inference and embedding ML intelligence directly into web applications.",
+      "Implemented monitoring, logging, and performance tracking for deployed ML services, ensuring system reliability and faster debugging in production"
+
+    ],"same_org_as_next": true,
+    "icon": "fa-briefcase"
   },
   {
     "position": "Software Engineer",

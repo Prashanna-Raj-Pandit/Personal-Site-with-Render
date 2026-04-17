@@ -31,6 +31,63 @@
     }
   ],
 
+  "services": [
+    {
+      "id": "genai-rag",
+      "title": "Gen AI & RAG Pipelines",
+      "icon": "fa-robot",
+      "description": "End-to-end Generative AI systems with Retrieval-Augmented Generation — document ingestion, vector indexing, multi-query retrieval, and grounded response generation. Production-grade domain-specific chatbots.",
+      "tags": ["RAG", "LLM", "ChromaDB", "FastAPI", "Cohere", "Whisper"],
+      "link": "https://docu-chat.vercel.app/catalog",
+      "link_label": "View Chatbot Catalog"
+    },
+    {
+      "id": "ml-ai",
+      "title": "ML / AI Development",
+      "icon": "fa-brain",
+      "description": "Custom machine learning and deep learning solutions — time-series classification, computer vision models, NLP systems — built end-to-end from data preprocessing to trained, evaluated models.",
+      "tags": ["TensorFlow", "PyTorch", "Scikit-Learn", "LSTM", "CNN", "OpenCV"],
+      "link": "",
+      "link_label": ""
+    },
+    {
+      "id": "data-analysis",
+      "title": "Data Analysis & Visualization",
+      "icon": "fa-chart-bar",
+      "description": "Exploratory data analysis, statistical modeling, and interactive dashboards. Transforming raw datasets into actionable insights using Python and Tableau.",
+      "tags": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Tableau", "R"],
+      "link": "",
+      "link_label": ""
+    },
+    {
+      "id": "mlops",
+      "title": "MLOps & Deployment",
+      "icon": "fa-cogs",
+      "description": "Production-ready ML deployment with CI/CD automation, containerization, model versioning, and monitoring for scalable, reproducible inference pipelines.",
+      "tags": ["Docker", "GitHub Actions", "MLflow", "Airflow", "CI/CD"],
+      "link": "",
+      "link_label": ""
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud Solutions",
+      "icon": "fa-cloud",
+      "description": "Cloud-native architectures on AWS — serverless functions, managed ML services, scalable data pipelines, and infrastructure automation for production workloads.",
+      "tags": ["AWS", "SageMaker", "EC2", "S3", "Lambda", "ECR", "ECS"],
+      "link": "",
+      "link_label": ""
+    },
+    {
+      "id": "api-dev",
+      "title": "API Development",
+      "icon": "fa-plug",
+      "description": "Production-grade REST APIs with FastAPI and Flask — modular, well-documented, and integrated with ML backends for real-time inference and data exchange.",
+      "tags": ["FastAPI", "Flask", "REST", "Python", "PostgreSQL"],
+      "link": "",
+      "link_label": ""
+    }
+  ],
+
   "about": {
     "intro": "I am a Computer Science graduate student at Southern Illinois University Edwardsville (SIUE), specializing in Statistics, Machine Learning, Deep Learning, and Computer Vision. I am originally from Nepal, where I completed my Bachelor’s degree in Electronics, Communication, and Information Engineering from Tribhuvan University, Pulchowk Campus—one of Nepal’s leading engineering institutes.",
     "description": "Currently, I am working as a Graduate Research Assistant, focusing on developing deep learning models for multimodal time-series data, particularly in gait biomechanics and noisy real-world datasets. My work involves end-to-end data processing, model design, and high-performance computing on GPU clusters.",
@@ -185,7 +242,7 @@
   "category": "ML/DL",
   "short_description": "A production-grade Retrieval-Augmented Generation (RAG) chatbot with multi-query retrieval, evidence grounding, and voice interaction.",
   "description": "Designed and implemented an end-to-end Retrieval-Augmented Generation (RAG) system that enables grounded, evidence-backed question answering over unstructured documents. Built a multi-stage pipeline including document ingestion, chunking, embedding generation, and semantic retrieval using ChromaDB. Integrated a multi-query retrieval strategy leveraging chat history with deduplication and dynamic ranking of chunks. Developed a FastAPI backend with a modular architecture and added real-time voice interaction using local Whisper for speech-to-text.",
-  "image": "images/recent_work/docuchat.gif",
+  "image": "images/support.png",
   "technologies": ["Python", "FastAPI", "ChromaDB", "LLM", "Whisper"],
   "features": [
     "Multi-query retrieval using conversation history",
@@ -220,21 +277,82 @@
   "award": "3rd Place Winner @ eHacks Hackathon"
 },
     {
+    "id": "bitpredict",
+    "title": "BitPredict: Bitcoin Price Forecasting with Neural Networks",
+    "category": "ML/DL",
+    "short_description": "Time series forecasting of Bitcoin prices comparing multiple neural network architectures including N-BEATS, LSTM, CNN, and ensemble models.",
+    "description": "Developed and compared a suite of neural network architectures for Bitcoin price forecasting using historical time series data. Implemented naive baseline, dense, LSTM, CNN, N-BEATS, and ensemble models to evaluate performance across varying horizon and window sizes. Applied time series preprocessing including sliding window construction, normalization, and train-test splitting with no data leakage. Evaluated models using MAE, RMSE, and MAPE metrics to identify the best-performing architecture for financial time series prediction.",
+    "image": "images/bitpredict.png",
+    "technologies": ["Python", "TensorFlow", "Keras", "LSTM", "CNN", "N-BEATS", "Scikit-Learn"],
+    "features": [
+      "Compared 6+ architectures: Naive, Dense, LSTM, CNN, N-BEATS, Ensemble",
+      "Sliding window preprocessing with configurable horizon & window sizes",
+      "N-BEATS implementation for interpretable neural forecasting",
+      "Ensemble model combining predictions across architectures",
+      "Evaluated with MAE, RMSE, and MAPE for realistic financial benchmarking",
+      "No-leakage train/test split for robust evaluation"
+    ],
+    "github": "https://github.com/Prashanna-Raj-Pandit/NN-Time-series",
+    "demo": "",
+    "date": "2025"
+  },
+    {
+    "id": "breast-cancer-classification",
+    "title": "Breast Cancer Classification: Comparative ML Analysis",
+    "category": "ML/DL",
+    "short_description": "Compared 7 ML models for breast cancer detection using clinical biomarkers, achieving 87% accuracy with Random Forest (AUC: 0.91).",
+    "description": "Built and compared 7 supervised ML models to classify breast cancer using routine blood biomarkers and anthropometric data (age, BMI) from the Breast Cancer Coimbra Dataset (116 women; 64 cancer, 52 control). Models evaluated: Naive Bayes, LDA, KNN, Random Forest, Gradient Boosting, SVM, and Deep Neural Network. Applied z-normalization, factor encoding, stratified train-test splits, and repeated 10-fold cross-validation for robust evaluation. Performed hyperparameter tuning including KNN-k sweep and RF mtry optimization. Key insight: Glucose, Resistin, and Adiponectin were top predictors — showing non-invasive tests can assist early cancer detection.",
+    "image": "images/breastcancer.png",
+    "technologies": ["R", "caret", "Random Forest", "SVM", "KNN", "Gradient Boosting", "DNN"],
+    "features": [
+      "Compared 7 models: Naive Bayes, LDA, KNN, RF, GBM, SVM, DNN",
+      "Best result: Random Forest — Accuracy 87%, F1 0.88, AUC 0.91",
+      "Sensitivity 85%, Specificity 90% — strong clinical balance",
+      "Repeated 10-fold cross-validation with stratified splits",
+      "Hyperparameter tuning: KNN-k sweep, RF mtry optimization",
+      "Top predictors: Glucose, Resistin, Adiponectin"
+    ],
+    "github": "https://github.com/Prashanna-Raj-Pandit/STAT-562-ML",
+    "demo": "",
+    "date": "2025"
+  },
+    {
+    "id": "telecom-predictive",
+    "title": "Modeling Frequency of Usage and Customer Churn",
+    "category": "Data Analysis",
+    "short_description": "Forecasted telecom network usage and classified customer complaints using regression and classification models with Tableau visualization.",
+    "description": "Forecasted telecom network usage using Poisson, Negative Binomial, Ridge, and Lasso regression models, addressing overdispersion and multicollinearity. Reduced RMSE by 34% through optimized modeling and feature engineering. Classified customer complaints using Logistic Regression with SMOTE oversampling, improving AUC from 0.8206 to 0.924 and accuracy to 87.5%. Applied regularization techniques (Lasso, Ridge, Elastic Net) and validated models with cross-validation. Visualized model results and insights in Tableau.",
+    "image": "images/telecom.png",
+    "technologies": ["R", "Tableau", "Logistic Regression", "SMOTE", "Ridge", "Lasso", "Poisson Regression"],
+    "features": [
+      "Poisson & Negative Binomial regression for count data with overdispersion",
+      "Ridge, Lasso, Elastic Net regularization for multicollinearity",
+      "Logistic Regression + SMOTE: AUC improved from 0.82 → 0.924",
+      "34% RMSE reduction through feature engineering and model tuning",
+      "Stratified cross-validation for robust performance estimates",
+      "Tableau dashboards for network usage and complaint insights"
+    ],
+    "github": "https://github.com/Prashanna-Raj-Pandit/STAT-Predictive-Modeling",
+    "demo": "",
+    "date": "2025"
+  },
+    {
     "id": "igait",
     "title": "iGAIT: Gait Analysis and AI-Based Motion Understanding",
     "category": "ML/DL",
     "short_description": "AI-based gait analysis using deep learning and signal processing for motion understanding.",
-    "description": "Developed a gait analysis system using OpenPose for 2D keypoint extraction from 106 videos, processed data with NumPy and Pandas to compute kinematic features such as stride length, cadence, and joint angles. Built logistic regression and deep learning models (80K parameters) achieving 72% and 88% accuracy, respectively.",
-    "image": "images/igait.png",
+    "description": "This thesis explores a video-based approach to identifying Autism Spectrum Disorder (ASD) by analysing how individuals walk, with the aim of developing a more accessible and objective screening method. Instead of relying on specialised clinical equipment, the study uses markerless pose estimation techniques to extract body movements from ordinary walking videos and convert them into structured gait data. These motion patterns are then processed and analysed using both traditional machine learning models and a deep learning approach. A key focus of the work is understanding which aspects of movement—particularly lower-limb joint behaviour, trunk motion, and centre of mass dynamics—help distinguish between ASD and typically developing individuals. The results show that meaningful patterns can be captured from video alone, with model performance comparable to existing studies, even under a stricter evaluation setup using a held-out test set. While the findings are promising, the study also highlights the limitations of small datasets and emphasises the need for further validation on larger and more diverse populations. Overall, the work demonstrates the potential of combining computer vision and machine learning to support early, non-invasive screening tools for ASD.",
+    "image": "images/skeleton.gif",
     "technologies": ["Python", "OpenPose", "NumPy", "Pandas", "Deep Learning"],
     "features": [
-      "2D keypoint extraction with OpenPose",
+      "2D keypoint extraction with OpenPose/Mediapipe",
       "Kinematic feature computation",
       "Deep learning gait classification",
-      "Multimodal dataset engineering"
+      "Multimodal dataset engineering",
+      "Time-series classification"
     ],
-    "github": "",
-    "demo": "",
+    "github": "https://github.com/igait-niu",
+    "demo": "https://www.igaitapp.com/",
     "date": "2024"
   },
     {
@@ -251,7 +369,7 @@
       "LSTM-based architecture",
       "Softmax output generation"
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/DeepLearning-MIT/tree/main/Lab1",
     "demo": "",
     "date": "2024"
   },
@@ -261,7 +379,7 @@
     "category": "ML/DL",
     "short_description": "Implemented CNNs and DB-VAE for bias mitigation in facial detection systems.",
     "description": "Developed CNN architectures for facial detection and integrated a Debiasing Variational Autoencoder (DB-VAE) to reweight training samples. Improved fairness by increasing sampling for underrepresented facial features, reducing demographic bias in model predictions.",
-    "image": "images/dbvae.png",
+    "image": "images/debiasing.gif",
     "technologies": ["Python", "TensorFlow", "VAE", "CNN"],
     "features": [
       "CNN-based facial detection",
@@ -269,45 +387,30 @@
       "Fairness-aware training",
       "Bias visualization"
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/DeepLearning-MIT/tree/main/Lab2",
     "demo": "",
     "date": "2024"
   },
-    {
-    "id": "reinforcement-learning",
-    "title": "Advanced AI Project: Reinforcement Learning",
-    "category": "ML/DL",
-    "short_description": "Implemented Q-learning and Value Iteration agents for policy optimization and exploration.",
-    "description": "Implemented Value Iteration and Q-learning agents for policy optimization tasks. Experimented with discount factors, noise, and living rewards to analyze agent behavior in environments such as Pacman and bridge crossing. Developed Epsilon-Greedy exploration and Approximate Q-learning for scalability.",
-    "image": "images/pacman.png",
-    "technologies": ["Python", "Reinforcement Learning", "Q-Learning", "Value Iteration"],
-    "features": [
-      "Q-learning implementation",
-      "Policy evaluation and control",
-      "Exploration with epsilon-greedy",
-      "Approximate Q-learning for scalability"
-    ],
-    "github": "",
-    "demo": "",
-    "date": "2023"
-  },
+
     {
     "id": "mednlpify",
-    "title": "MedNLPify: Deep Learning for Biomedical Text Classification",
+    "title": "MedNLPify: Biomedical NLP Classifier + Chrome Extension",
     "category": "ML/DL",
-    "short_description": "NLP system for sentence classification in biomedical abstracts using hybrid embeddings.",
-    "description": "Developed deep learning models with token, character, and hybrid embeddings for classifying 200k PubMed RCT abstracts. Achieved 85.6% accuracy using a Tribrid model and deployed as a Flask web app and Chrome extension for biomedical text classification.",
+    "short_description": "Deep learning NLP system classifying 200k+ PubMed RCT sentences with a Tribrid architecture, deployed as a Flask API and Chrome extension.",
+    "description": "Built a deep learning NLP system to classify 200,000+ PubMed RCT sentences using a Tribrid architecture combining token, character, and positional embeddings. Improved model accuracy from 72.5% to 85.6% through feature engineering, architecture tuning, and hyperparameter optimization. Developed an end-to-end ML pipeline covering data preprocessing, model training, inference API, and deployment using Flask and Docker. Implemented CI/CD workflows with GitHub Actions, reducing manual build time by 45%, and deployed a Chrome extension for real-time biomedical sentence classification.",
     "image": "images/mednlpfy.png",
-    "technologies": ["Python", "TensorFlow", "Flask", "NLP"],
+    "technologies": ["Python", "TensorFlow", "Keras", "Flask", "Docker", "GitHub Actions", "Chrome Extension", "NLP"],
     "features": [
-      "Hybrid embedding architecture",
-      "Flask web deployment",
-      "Chrome extension integration",
-      "Biomedical sentence classification"
+      "Tribrid embedding architecture (token + character + positional)",
+      "85.6% accuracy on 200k+ PubMed RCT sentences",
+      "End-to-end ML pipeline: preprocessing → training → inference API",
+      "Flask + Docker deployment with CI/CD via GitHub Actions",
+      "Chrome extension for real-time in-browser classification",
+      "Color-coded sentence labeling across 5 medical categories"
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/MedNLPify-Chrome-Extension",
     "demo": "",
-    "date": "2023"
+    "date": "2025"
   },
     {
     "id": "food-vision",
@@ -323,16 +426,16 @@
       "Model checkpointing",
       "Performance comparison"
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/Transfer-Learning--TensorFlow/blob/main/03_Food_Vision.ipynb",
     "demo": "",
-    "date": "2023"
+    "date": "2024"
   },
 {
     "id": "exfs2",
     "title": "ExFS2: User-Space Virtual File System",
     "category": "Backend",
     "short_description": "Implemented an inode-based virtual file system supporting direct and indirect addressing.",
-    "description": "Built ExFS2, a user-space virtual file system emulating inode-based storage using C. Supported file creation, deletion, nested directories, and direct/single/double indirect block addressing. Designed bitmap-based allocation and implemented efficient space reuse and scalability.",
+    "description": "ExFS2 is a user-space virtual file system that emulates an inode-based storage model using standard files for metadata and data persistence. It supports direct, single-indirect, and double-indirect block addressing to efficiently manage file storage and access. The system is designed to handle the creation and deletion of files and nested directories through path traversal, while dynamically allocating inodes and data blocks. It enables reading and extracting files byte-for-byte to stdout, manages large files through indirect addressing, and supports segment expansion when space runs out. ExFS2 also incorporates a bitmap-based system to reuse freed inodes and blocks for efficient memory and storage utilization. Additionally, it provides the ability to list the contents of directories, offering a complete and functional virtual file system experience.",
     "image": "images/exfs2.png",
     "technologies": ["C", "File Systems", "Memory Management"],
     "features": [
@@ -341,7 +444,25 @@
       "Dynamic inode/data segment creation",
       "Bitmap-based allocation and reuse"
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/File-System-ExFS2",
+    "demo": "",
+    "date": "2023"
+  },
+       {
+    "id": "reinforcement-learning",
+    "title": "Advanced AI Project: Reinforcement Learning",
+    "category": "ML/DL",
+    "short_description": "Implemented Q-learning and Value Iteration agents for policy optimization and exploration.",
+    "description": "Implemented Value Iteration and Q-learning agents for policy optimization tasks. Experimented with discount factors, noise, and living rewards to analyze agent behavior in environments such as Pacman and bridge crossing. Developed Epsilon-Greedy exploration and Approximate Q-learning for scalability.",
+    "image": "images/pacman.gif",
+    "technologies": ["Python", "Reinforcement Learning", "Q-Learning", "Value Iteration"],
+    "features": [
+      "Q-learning implementation",
+      "Policy evaluation and control",
+      "Exploration with epsilon-greedy",
+      "Approximate Q-learning for scalability"
+    ],
+    "github": "https://github.com/Prashanna-Raj-Pandit/Reinforcement-Learning",
     "demo": "",
     "date": "2023"
   },
@@ -350,34 +471,40 @@
     "title": "Traffic Sign Classification with Fine-Tuned VGG-16",
     "category": "Computer Vision",
     "short_description": "Traffic sign classification using fine-tuned VGG-16 with TensorFlow.",
-    "description": "Fine-tuned a pre-trained VGG-16 model to classify 43 traffic sign classes from the GTSRB dataset. Implemented dataset preprocessing, model training, evaluation, and visualization pipeline. Demonstrated transfer learning performance on limited data.",
+    "description": "This project implements a deep learning model to classify traffic signs using a fine-tuned VGG-16 convolutional neural network (CNN). Built with TensorFlow and Keras, it processes a dataset of traffic sign images, trains a model to recognize 43 distinct classes, and evaluates its performance. The code is provided as a single Python script (traffic_sign_classifier.py) that handles data downloading, preprocessing, training, evaluation, and visualization.",
     "image": "images/trafic-sign.png",
     "technologies": ["TensorFlow", "VGG-16", "Transfer Learning"],
     "features": [
-      "Dataset preprocessing",
-      "Fine-tuned CNN model",
-      "Training visualization",
-      "Accurate sign recognition"
+      "Download and preprocess a traffic sign dataset automatically.",
+      "Fine-tune a pre-trained VGG-16 model for traffic sign classification.",
+      "Train the model and evaluate its accuracy on validation and test datasets.",
+      "Generate visualizations of training progress and sample predictions."
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/Traffic-Sign-Classification-with-Fine-Tuned-VGG-16",
     "demo": "",
     "date": "2023"
   },
     {
     "id": "user-level-threading",
-    "title": "Other",
+    "title": "User Level Thread and Lottery Scheduling",
     "category": "Operating Systems",
     "short_description": "Implemented many-to-one user-level threading with Round Robin and Lottery schedulers.",
-    "description": "Developed a user-level threading library using ucontext for manual context switching and scheduling. Implemented Round Robin and Lottery schedulers, simulated preemption, yielding, and fairness experiments based on Waldspurger’s Lottery Scheduling paper.",
+    "description": "This project focuses on building a lightweight user-level threading system from scratch without relying on the traditional pthreads library. Instead of depending on the operating system kernel, the implementation manages threads entirely in user space using a many-to-one threading model, where multiple user threads are mapped to a single kernel thread. This approach provides flexibility and efficiency but requires designing a custom scheduler and handling context switching manually.\n\nTo achieve this, the system leverages the ucontext library to create and manage execution contexts. Each thread is assigned its own stack and execution state, allowing seamless switching between threads using functions such as getcontext(), makecontext(), and swapcontext(). A timer-based preemption mechanism is implemented using signals, enabling threads to be interrupted after a fixed time slice (100 ms) and rescheduled. This ensures that long-running threads do not monopolize CPU time while still allowing shorter tasks to yield control voluntarily.\n\nThe project implements and compares two scheduling algorithms: Round Robin and Lottery Scheduling. The Round Robin scheduler follows a deterministic approach, assigning equal CPU time to each thread in a cyclic order. In contrast, the Lottery Scheduler introduces a probabilistic model where threads are assigned tickets representing their share of CPU time. Threads with more tickets have a higher chance of execution, enabling flexible and priority-based scheduling.\n\nA key highlight of this project is the experimental validation of fairness in Lottery Scheduling, inspired by Waldspurger’s research. By running threads with different ticket ratios (e.g., 1:2, 1:3, etc.), the results demonstrate that CPU allocation closely follows the assigned proportions over time. As execution continues, the observed performance converges toward the theoretical fairness ratio, confirming the effectiveness of probabilistic scheduling.\n\nOverall, this project provides a deep understanding of thread management, scheduling algorithms, context switching, and signal handling at the system level. It highlights the trade-offs between deterministic and probabilistic scheduling while demonstrating how operating system concepts can be implemented at the user level.",
     "image": "images/context-switch.jpeg",
     "technologies": ["C", "ucontext", "Operating Systems"],
     "features": [
-      "Round Robin scheduling",
-      "Lottery-based fairness scheduling",
-      "Manual context switching",
-      "Signal-based preemption handling"
+      "Custom user-level threading library (many-to-one model) without pthreads",
+      "Manual context switching using ucontext APIs",
+      "Preemptive scheduling using timer interrupts (SIGVTALRM)",
+      "Round Robin scheduler with fixed time slicing",
+      "Lottery Scheduler with ticket-based probabilistic scheduling",
+      "Dynamic thread creation with independent stacks (8KB per thread)",
+      "Ready queue management for scheduling decisions",
+      "Signal-driven execution control and thread preemption",
+      "Experimental validation of fairness in Lottery Scheduling",
+      "Comparative analysis of Round Robin vs Lottery scheduling"
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/User-Level-Threads-management",
     "demo": "",
     "date": "2023"
   },
@@ -396,7 +523,7 @@
       "Algorithm scalability testing",
       "Real-world urban dataset simulation"
     ],
-    "github": "",
+    "github": "https://github.com/Prashanna-Raj-Pandit/Delivery-Route-Planning",
     "demo": "",
     "date": "2024"
   },
@@ -486,10 +613,30 @@
         "User profile management",
         "Database integration"
       ],
-      "github": "",
+      "github": "https://github.com/Prashanna-Raj-Pandit/BlogPost-with-user-authentication",
       "demo": "https://blogpost-with-user-authentication.onrender.com/",
       "date": "2023"
     },
+    {
+    "id": "alexapi",
+    "title": "AlexaPI: Voice Assistant on Raspberry Pi",
+    "category": "Backend Development",
+    "short_description": "Custom Alexa Voice Service device built on Raspberry Pi for voice-activated smart home automation in regions where Alexa is unsupported.",
+    "description": "Built a custom Alexa Voice Service (AVS) system on Raspberry Pi to enable smart voice interaction in Nepal, where Alexa is not officially supported. Integrated Amazon's AVS Device SDK with a Raspberry Pi 3/4 to create a voice-enabled virtual assistant. Extended smart home capabilities by connecting an ESP8266 (NodeMCU) via Sinric API for controlling lights, fans, and doors. Implemented wake word detection, priority-based audio channel management, LED status indicators, and music streaming support.",
+    "image": "images/respberrypi.png",
+    "technologies": ["Raspberry Pi", "C++", "Python", "Bash", "AVS SDK", "ESP8266", "Arduino", "Sinric API"],
+    "features": [
+      "Amazon AVS Device SDK integrated on Raspberry Pi",
+      "Wake word detection with custom audio feedback cues",
+      "Voice-activated smart home control (lights, fans, doors)",
+      "ESP8266/NodeMCU integration via Sinric API",
+      "LED status indicators (listening/processing states)",
+      "Music streaming: Amazon Music, Prime Music, audiobooks"
+    ],
+    "github": "https://github.com/Prashanna-Raj-Pandit/AlexaPI",
+    "demo": "",
+    "date": "2020"
+  },
     {
       "id": "flight-finder-bot",
       "title": "Flight Finder Bot",
@@ -584,18 +731,8 @@
     "icon": "fa-user-check",
     "description": "Completed IRB certification for conducting ethical research involving human participants in behavioral and social sciences.",
     "tags": ["IRB", "Ethics", "Research"]
-  },
-      {
-    "id": "100-days-of-python",
-    "title": "100 Days of Python Bootcamp",
-    "issuer": "Udemy",
-    "date": "2024",
-    "credential_url": "https://www.udemy.com/certificate/UC-216c7779-217e-45cd-a19f-b9fe00580bd0/",
-    "image": "images/certifications/udemy.png",
-    "icon": "fa-python",
-    "description": "Completed a 100-day intensive Python bootcamp covering core programming, OOP, APIs, web development, and automation projects.",
-    "tags": ["Python", "Programming", "Projects"]
   }
+
 ]
 
 }

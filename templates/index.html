@@ -18,7 +18,7 @@
         <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
         <ul class="nav-menu" id="navMenu">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#tableau-dashboards">Dashboards</a></li>
@@ -74,13 +74,30 @@
 
 
 
-<section id="about" class="section">
+<section id="services" class="section">
     <div class="container">
-        <h3 class="section-title">About Me</h3>
-        <div class="about-content">
-            <p>{{ data.about.intro }}</p>
-            <p>{{ data.about.description }}</p>
-            <p>{{ data.about.interests }}</p>
+        <h2 class="section-title">Services</h2>
+
+        <div class="services-grid">
+            {% for service in data.services %}
+            <div class="service-card{% if service.id == 'genai-rag' %} service-card-featured{% endif %}">
+                <div class="service-icon-wrap">
+                    <i class="fas {{ service.icon }}"></i>
+                </div>
+                <h3 class="service-title">{{ service.title }}</h3>
+                <p class="service-desc">{{ service.description }}</p>
+                <div class="skills-tags">
+                    {% for tag in service.tags %}
+                    <span class="skill-tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% if service.link %}
+                <a href="{{ service.link }}" target="_blank" class="service-link">
+                    {{ service.link_label }} <i class="fas fa-arrow-right"></i>
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
         </div>
 
         <div class="skills-showcase">
@@ -295,25 +312,21 @@
                         <p class="project-overlay-text">{{ project.short_description[:150] }}{% if
                             project.short_description|length > 150 %}...{% endif %}</p>
                     </div>
-                    <!-- GitHub Icon -->
-                    {% if project.github_url %}
-                    <a href="{{ project.github_url }}"
-                       target="_blank"
-                       class="project-github-link"
-                       aria-label="View source on GitHub"
-                       onclick="event.stopPropagation();">
+                    {% if project.github %}
+                    <div class="project-github-link"
+                         onclick="event.preventDefault(); event.stopPropagation(); window.open('{{ project.github }}', '_blank');"
+                         aria-label="View source on GitHub">
                         <i class="fab fa-github"></i>
-                    </a>
+                    </div>
                     {% endif %}
                 </div>
                 <div class="project-content">
-                    <!--                        <span class="project-category">{{ project.category }}</span>-->
                     <h4 class="project-title">{{ project.title }}</h4>
-                    <div class="project-tech">
-                        {% for tech in project.technologies[:3] %}
-                        <span class="tech-tag">{{ tech }}</span>
-                        {% endfor %}
-                    </div>
+<!--                    <div class="project-tech">-->
+<!--                        {% for tech in project.technologies[:3] %}-->
+<!--                        <span class="tech-tag">{{ tech }}</span>-->
+<!--                        {% endfor %}-->
+<!--                    </div>-->
                 </div>
             </a>
             {% endfor %}

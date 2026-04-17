@@ -18,8 +18,7 @@
             <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="{{ url_for('skills') }}">Skills</a></li>
+                <li><a href="/#services">Services</a></li>
                 <li><a href="/#experience">Experience</a></li>
                 <li><a href="/#projects">Projects</a></li>
                 <li><a href="/#achievements">Achievements</a></li>
@@ -81,14 +80,17 @@
             <div class="more-achievements">
                 {% for a in data.achievements %}
                 {% if a.id != achievement.id %}
-                <a href="{{ url_for('achievement_detail', achievement_id=a.id) }}" class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas {{ a.icon }}"></i>
+                <a href="{{ url_for('achievement_detail', achievement_id=a.id) }}" class="more-achievement-card">
+                    <div class="more-achievement-img">
+                        <img src="{{ url_for('static', filename=a.image) }}" alt="{{ a.title }}">
+                        <div class="more-achievement-overlay">
+                            <i class="fas {{ a.icon }}"></i>
+                        </div>
                     </div>
-                    <div class="achievement-content">
-                        <span class="achievement-type">{{ a.type }}</span>
+                    <div class="more-project-content">
+                        <span class="achievement-type" style="font-size:0.75rem; margin-bottom:0.4rem; display:inline-block;">{{ a.type }}</span>
                         <h3>{{ a.title }}</h3>
-                        <p>{{ a.description }}</p>
+                        <p>{{ a.description[:100] }}{% if a.description|length > 100 %}...{% endif %}</p>
                     </div>
                 </a>
                 {% endif %}

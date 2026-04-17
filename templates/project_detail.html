@@ -17,8 +17,7 @@
             <a href="/" class="nav-brand">&lt;{{ data.name.split()[0] }}/&gt;</a>
             <ul class="nav-menu">
                 <li><a href="/">Home</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="{{ url_for('skills') }}">Skills</a></li>
+                <li><a href="/#services">Services</a></li>
                 <li><a href="/#experience">Experience</a></li>
                 <li><a href="/#projects">Projects</a></li>
                 <li><a href="/#achievements">Achievements</a></li>
@@ -49,11 +48,7 @@
             <div class="detail-image">
                 <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}">
             </div>
-        </div>
-    </section>
 
-    <section class="section section-dark">
-        <div class="container">
             <div class="detail-grid">
                 <div class="detail-main">
                     <h2>About This Project</h2>
@@ -71,7 +66,7 @@
 
                 <div class="detail-sidebar">
                     <div class="sidebar-box">
-                        <h3><i class="fas fa-tools"></i> Technologies</h3>
+                        <h3><i class="fas fa-microchip"></i> Technologies</h3>
                         <div class="tech-list">
                             {% for tech in project.technologies %}
                             <span class="tech-item">{{ tech }}</span>
@@ -94,6 +89,13 @@
                             </a>
                             {% endif %}
                         </div>
+                    </div>
+                    {% endif %}
+
+                    {% if project.award %}
+                    <div class="sidebar-box">
+                        <h3><i class="fas fa-trophy"></i> Award</h3>
+                        <p style="font-size:0.88rem; color:var(--accent2); font-weight:500;">{{ project.award }}</p>
                     </div>
                     {% endif %}
                 </div>

@@ -371,6 +371,81 @@ body {
 }
 
 /* ========================================
+   Services Section
+   ======================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.service-card {
+    background: linear-gradient(135deg, rgba(124,92,255,0.07), rgba(39,195,255,0.05));
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    background: linear-gradient(135deg, rgba(124,92,255,0.14), rgba(39,195,255,0.10));
+    border-color: rgba(124,92,255,0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(124,92,255,0.14);
+}
+
+.service-card-featured {
+    border-color: rgba(124,92,255,0.40);
+    background: linear-gradient(135deg, rgba(124,92,255,0.13), rgba(39,195,255,0.09));
+}
+
+.service-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(124,92,255,0.25), rgba(39,195,255,0.20));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--accent2);
+    flex-shrink: 0;
+}
+
+.service-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.service-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.75;
+    flex: 1;
+}
+
+.service-link {
+    margin-top: 0.3rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 500;
+    transition: gap 0.2s ease;
+}
+
+.service-link:hover {
+    gap: 0.75rem;
+}
+
+/* ========================================
    About Section
    ========================================*/
 .about-content {
@@ -616,9 +691,9 @@ body {
 
 .tech-tag {
     background: rgba(255,255,255,0.06);
-    color: rgba(255,255,255,0.86);
-    padding: 0.3rem 0.8rem;
-    border-radius: 999px;
+    color: rgba(255,255,255,0.90);
+    padding: 0.3rem 0.7rem;
+    border-radius: 8px;
     font-size: 0.8rem;
     border: 1px solid rgba(255,255,255,0.14);
 }
@@ -1474,12 +1549,22 @@ body {
         font-size: 2rem;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
     }
 
     .tableau-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -1879,7 +1964,7 @@ body {
    GitHub Icon on Project Card
    ================================ */
 
-.project-github-link{
+.project-github-link {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -1895,28 +1980,20 @@ body {
   backdrop-filter: blur(6px);
   box-shadow: 0 8px 22px rgba(0,0,0,0.35);
   z-index: 5;
+  opacity: 0.9;
   transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
 }
 
-.project-github-link i{
+.project-github-link i {
   font-size: 1.35rem;
 }
 
-/* Hover effects */
-.project-github-link:hover{
+.project-github-link:hover {
   transform: translateY(-2px) scale(1.05);
   background: linear-gradient(135deg, rgba(124,92,255,0.85), rgba(39,195,255,0.70));
   border-color: rgba(124,92,255,0.45);
   box-shadow: 0 12px 30px rgba(124,92,255,0.35);
   color: #fff;
-}
-
-/* Subtle appear on hover (optional fancy effect) */
-.project-github-link{
-  opacity: 0.9;
-}
-
-.project-card:hover .project-github-link{
   opacity: 1;
 }
 
